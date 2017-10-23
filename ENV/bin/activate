@@ -40,7 +40,12 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/lifurong/dev/ffwebsite/ENV"
+
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# virtual env is at ./env
+ENV_DIR=`dirname $BIN_DIR`
+VIRTUAL_ENV=$ENV_DIR
+
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
