@@ -1,13 +1,11 @@
 geting started
 
-Switch on VirtualEnv
-`
+$ virtualenv --python=python3.6  --no-site-packages ENV
 $ source ENV/bin/activate
-(ENV) $ python --version
-3.6.1
-(ENV) $ python -m django --version
-2.0b1
-`
+$ pip install -r requirements.txt
 
 
+each time a new package is added in the virtual ENV, generate a new requirements.txt file via:
+
+(ENV)$ pip freeze > requirements.txt
 
