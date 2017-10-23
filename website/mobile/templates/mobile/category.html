@@ -1,0 +1,14 @@
+<head>
+    <title>{{ category.title }}</title>
+</head>
+<body>
+    {% for article in articles %}
+        <div>封面: {{ article.cover }}</div>
+        <h1>文章标题： 
+            <a href={% url 'article' article.id %}>
+                {{ article.title }}
+            </a>
+        </h1>
+        <h2>文章概要： {{ article.desc }}</h2>
+    {% endfor %}
+</body>
