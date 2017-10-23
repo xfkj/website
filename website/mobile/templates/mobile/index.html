@@ -1,0 +1,33 @@
+<div>
+    div!
+</div>
+
+<!--演示如何显示所有文章-->
+{% for category, articles in categories.items %}
+    {{ category }}
+    {% for article in articles %}
+    <div>
+        <div>
+            <a href={% url 'article' article.id %}>
+                文章id： {{ article.id }}
+            </a>
+        </div>
+        <h1>文章标题： {{ article.title }}</h1>
+        <h2>文章概要： {{ article.desc }}</h2>
+        <div>文章内容： {{ article.content }}</div>
+    </div>
+    {% endfor %}
+{% endfor %}
+
+
+    <!--演示如何显示学生文章-->
+    {% for article in categories.学生 %}
+        <div>
+            <div>文章id： {{ article.id }}</div>
+            <h1>文章标题： {{ article.title }}</h1>
+            <h2>文章概要： {{ article.desc }}</h2>
+            <div>文章内容： {{ article.content }} </div>
+        </div>
+    {% endfor %}
+</div>
+</div>

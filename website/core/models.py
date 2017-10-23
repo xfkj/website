@@ -11,6 +11,11 @@ class Category(models.Model):
         return self.title
 
 
+    class Meta:
+        verbose_name = '分类'
+        verbose_name_plural = '分类'
+
+
 
 
 class Tag(models.Model):
@@ -20,7 +25,10 @@ class Tag(models.Model):
     def __str__(self):
         return self.tag
 
-
+    
+    class Meta:
+        verbose_name = '标签'
+        verbose_name_plural = '标签'
 
 
 # Create your models here.
@@ -39,6 +47,10 @@ class Article(models.Model):
         return self.title
 
 
+    class Meta:
+        verbose_name = '文章'
+        verbose_name_plural = '文章'
+
 
 
 class VisitorRecord(models.Model):
@@ -49,3 +61,8 @@ class VisitorRecord(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+    class Meta:
+        verbose_name = '访客'
+        verbose_name_plural = '访客'
