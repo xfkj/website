@@ -1,0 +1,44 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/topArticles/index.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="top">
+  <h1>非凡头条</h1>
+  <a id="back"><i></i></a>
+</div>
+
+<div class="main">
+  <div class="header">
+    <a href="{% url 'article' articles.all.0.id %}">
+      <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ articles.all.0.cover.url }}" alt="" class="lazyload">
+      <div class="mask">
+        <!-- 不要修改这里 -->
+      </div>
+      <p class="title">
+        {{ articles.all.0.title }}
+      </p>
+    </a>
+  </div>
+  {% for article in articles %}
+  <div class="item">
+    <a href="{% url 'article' article.id %}">
+      <p class="title">
+        {{ article.desc | safe }}
+      </p>
+      <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+      <p class="tag"># 非凡教育</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block foot %}
+{% include 'mobile/_nav.html' %}
+<script src="{% static "utils/headroom/headroom.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}

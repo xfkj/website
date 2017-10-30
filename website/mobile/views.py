@@ -130,6 +130,7 @@ def get_template_for_category(category):
         '礼包': 'mobile/goAndGet.html',
         '优秀学员': 'mobile/students.html',
         '校区介绍': 'mobile/campus.html',
+        '非凡头条': 'mobile/topArticles.html',
     }
 
     return template_map[cat_name]
@@ -140,6 +141,7 @@ def get_template_for_article(article):
         '非凡名师': 'mobile/masterDetails.html',
         '优秀学员': 'mobile/studentDetails.html',
         '礼包': 'mobile/receive.html',
+        '非凡头条': 'mobile/topArticleDetails.html',
     }
     return template_map[article.category.title]
 
