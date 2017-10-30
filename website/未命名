@@ -1,0 +1,15 @@
+function guestPost(data, vilidate, successCallback) {
+  $ajax({
+    type: 'post',
+    url: 'api/guests',
+    beforeSubmit: vilidate,
+    data: data,
+    success: function(str) {
+      if (str === 'success') {
+        successCallback()
+      } else {
+        alert('提交失败，请重试')
+      }
+    },
+  })
+}
