@@ -18,6 +18,7 @@ class ArticleAdmin(SummernoteModelAdmin):
     list_display_links = ('title', )
     list_editable = ('category', 'promote', 'weight')
     list_filter = ('category', 'promote', 'tags')
+    readonly_fields = ('image_tag',)
 
 
 

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.safestring import mark_safe
 
 
 
@@ -41,6 +41,11 @@ class Article(models.Model):
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE)
     promote = models.BooleanField(verbose_name='置于首页')
     weight = models.IntegerField(verbose_name='排序')
+
+
+    def image_tag(self):
+        return mark_safe(u'<img class="cover" src="%s" />' % self.cover.url)
+    image_tag.short_description = '封面预览'
 
 
     def __str__(self):
