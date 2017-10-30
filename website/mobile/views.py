@@ -94,15 +94,23 @@ def home(request):
 
 })
 
-def article(request, article_id):
-    article_obj = get_object_or_404(Article, pk=article_id)
+def article(request, article_id=None, article_title=None):
+    if article_id is not None:
+        article_obj = get_object_or_404(Article, pk=article_id)
+    else:
+        article_obj = get_object_or_404(Article, title=article_title) 
     return render_to_response('mobile/article.html',
         {
             'article': article_obj
         })
 
-def category(request, category_id):
-    category_obj = get_object_or_404(Category, pk=category_id)
+
+
+def category(request, category_id=None, category_title=None):
+    if category_id is not None:
+        category_obj = get_object_or_404(Category, pk=category_id)
+    else:
+        category_obj = get_object_or_404(Category, title=category_title)
     articles = category_obj.article_set.all()
     return render_to_response('mobile/category.html',
         {
