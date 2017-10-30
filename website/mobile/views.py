@@ -98,7 +98,7 @@ def article(request, article_id=None, article_title=None):
     if article_id is not None:
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
-        article_obj = get_object_or_404(Article, title=article_title) 
+        article_obj = get_object_or_404(Article, title=article_title)
     return render_to_response('mobile/article.html',
         {
             'article': article_obj
@@ -112,11 +112,29 @@ def category(request, category_id=None, category_title=None):
     else:
         category_obj = get_object_or_404(Category, title=category_title)
     articles = category_obj.article_set.all()
-    return render_to_response('mobile/category.html',
+    tags = extract_tags(articles)
+    print(tags)
+    return render_to_response(get_template_for_category(category_obj),
         {
             'category': category_obj.title,
+            'tags': tags,
             'articles': articles,
         })
+
+
+
+def get_template_for_category(category):
+    cat_name = category.title
+    template_map = {
+        '非凡名师': 'mobile/teachers.html',
+    }
+
+    return template_map[cat_name]
+
+
+
+def extract_tags(articles):
+    return list(set([article.tags.all()[0] for article in articles]))
 
 def signUp(request):
     return render_to_response('mobile/signUp.html')

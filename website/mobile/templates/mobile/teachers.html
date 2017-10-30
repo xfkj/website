@@ -1,0 +1,59 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+<link rel="stylesheet" href="{% static "mobile/css/teachers/index.css" %}">
+{% endblock %}
+
+{% block body %}
+<!-- 分页标签 -->
+<h1>{{tags}}</h1>
+<div class="top">
+  <h1>非凡名师</h1>
+  <a id="back"><i></i></a>
+  <div class="nav swiper-container">
+    <div class="swiper-wrapper">
+      {% for tag in tags %}
+      <a class="swiper-slide {% if forloop.counter == 0 %} active {% endif %}">
+        <span>{{ tag }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- 分页内容 -->
+<div class="main nav-content">
+  <div class="swiper-wrapper">
+    {% for tag in tags %}
+    <div class="swiper-slide swiper-no-swiping">
+      {% for article in tag.article_set.all %}
+
+      <a href="masterDetails.html">
+        <div class="item">
+          <div class="img">
+            <img src="{{ article.cover.url }}" alt="">
+          </div>
+          <div class="detail">
+            <p class="name">
+              {{ article.title }}
+            </p>
+            <p class="intro">
+              {{ article.desc }}
+            </p>
+          </div>
+        </div>
+      </a>
+
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+<script src="{% static "mobile/js/teachers/index.js" %}"></script>
+{% endblock %}
