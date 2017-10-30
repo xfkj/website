@@ -1,0 +1,41 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/campus/campus.css" %}">
+<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="top">
+    <h1>非凡校区</h1>
+    <a id="back"><i></i></a>
+    <div class="nav swiper-container">
+        <div class="swiper-wrapper">
+            {% for article in articles %}
+            <a class="swiper-slide {% if forloop.counter == 0 %} active {% endif %}">
+                <span>{{article.title}}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="content nav-content">
+    <div class="swiper-wrapper">
+        {% for article in articles %}
+        <div class="nav-module swiper-slide swiper-no-swiping">
+            {{ article.content | safe }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block foot %}
+{% include 'mobile/_nav.html' %}
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
+<script src="{% static "utils/headroom/headroom.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}

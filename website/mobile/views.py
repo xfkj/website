@@ -129,6 +129,7 @@ def get_template_for_category(category):
         '非凡名师': 'mobile/teachers.html',
         '礼包': 'mobile/goAndGet.html',
         '优秀学员': 'mobile/students.html',
+        '校区介绍': 'mobile/campus.html',
     }
 
     return template_map[cat_name]
