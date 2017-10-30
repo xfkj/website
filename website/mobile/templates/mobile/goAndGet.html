@@ -2,5 +2,26 @@
 {% load staticfiles %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
 <link rel="stylesheet" href="{% static "mobile/css/goAndGet/goAndGet.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="header"></div>
+<div class="banner">
+  <ul>
+    {% for article in articles %}
+    <li>
+      <a href="{% url 'article' article.id %}">
+        <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block foot %}
+{% include "mobile/_nav.html" with active_link='category/礼包' %}
+<script src="{% static "mobile/js/common/index.js" %}"></script>
 {% endblock %}

@@ -99,7 +99,7 @@ def article(request, article_id=None, article_title=None):
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
         article_obj = get_object_or_404(Article, title=article_title)
-    return render_to_response('mobile/article.html',
+    return render_to_response(get_template_for_article(article_obj),
         {
             'article': article_obj
         })
@@ -127,11 +127,21 @@ def get_template_for_category(category):
     cat_name = category.title
     template_map = {
         '非凡名师': 'mobile/teachers.html',
+        '礼包': 'mobile/goAndGet.html',
+        '优秀学员': 'mobile/students.html',
+        '校区介绍': 'mobile/campus.html',
     }
 
     return template_map[cat_name]
 
 
+def get_template_for_article(article):
+    template_map = {
+        '非凡名师': 'mobile/masterDetails.html',
+        '优秀学员': 'mobile/studentDetails.html',
+        '礼包': 'mobile/receive.html',
+    }
+    return template_map[article.category.title]
 
 def extract_tags(articles):
     return list(set([article.tags.all()[0] for article in articles]))

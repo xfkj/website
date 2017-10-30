@@ -11,7 +11,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="category/高考冲刺">
+        <a href="{% url 'category_by_title' '高考冲刺' %}">
           <i class="icon gkcj"></i>
           <p>高考冲刺</p>
         </a>
@@ -41,13 +41,13 @@
         </a>
       </li>
       <li>
-        <a href="students.html">
+        <a href="{% url 'category_by_title' '优秀学员' %}">
           <i class="icon yxxy"></i>
           <p>优秀学员</p>
         </a>
       </li>
       <li>
-        <a href="campus.html">
+        <a href="{% url 'category_by_title' '校区介绍' %}">
           <i class="icon xqjs"></i>
           <p>校区介绍</p>
         </a>
@@ -117,7 +117,7 @@
   <div class="ff-teacher">
       <h2>
         非凡名师
-        <a href="category/非凡名师">更多 ></a>
+        <a href="{% url 'category_by_title' '非凡名师' %}">更多 ></a>
       </h2>
       <div class="st-container">
         <div class="swiper-wrapper">

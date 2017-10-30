@@ -1,0 +1,33 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/campus/campus.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="header">
+    <img src="{% static "mobile/img/detailes/icon_teacher_details.png" %}"/>
+</div>
+
+<div class="headSculpture">
+    <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+</div>
+
+<div class="object">
+    <p class="objectName">{{ article.title }}</p>
+    <p class="academicTitle">{{ article.tags.all.0 }}老师</p>
+</div>
+
+<div class="shadow"></div>
+
+<div class="details">
+    {{ article.content | safe }}
+</div>
+{% endblock %}
+
+{% block foot %}
+{% include 'mobile/_nav.html' %}
+<script src="{% static "utils/headroom/headroom.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}

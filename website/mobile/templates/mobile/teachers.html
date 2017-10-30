@@ -29,7 +29,7 @@
     <div class="swiper-slide swiper-no-swiping">
       {% for article in tag.article_set.all %}
 
-      <a href="masterDetails.html">
+      <a href="{% url 'article' article.id %}">
         <div class="item">
           <div class="img">
             <img src="{{ article.cover.url }}" alt="">
@@ -44,7 +44,6 @@
           </div>
         </div>
       </a>
-
       {% endfor %}
     </div>
     {% endfor %}
@@ -53,6 +52,7 @@
 {% endblock %}
 
 {% block foot %}
+{% include "mobile/_nav.html" %}
 <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
 <script src="{% static "mobile/js/teachers/index.js" %}"></script>
