@@ -9,3 +9,9 @@ each time a new package is added in the virtual ENV, generate a new requirements
 
 (ENV)$ pip freeze > requirements.txt
 
+
+
+
+When you add any new static files, please use collectstatic command to collect static files to qiniu.
+$ ./manage.py collectstatic
+
