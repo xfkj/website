@@ -62,6 +62,7 @@ class Article(models.Model):
 class VisitorRecord(models.Model):
     name = models.CharField(max_length=100, verbose_name='访客姓名')
     phone = models.CharField(max_length=30, verbose_name='电话')
+    product = models.CharField(max_length=100, verbose_name='关注产品')
     articleOfInterest = models.ForeignKey(Article, verbose_name='感兴趣的文章', on_delete=models.CASCADE)
 
 

@@ -6,7 +6,7 @@ from django_summernote.widgets import SummernoteWidget
 
 # Register your models here.
 
-for m in [VisitorRecord, Category, Tag]:
+for m in [Category, Tag]:
     admin.site.register(m)
 
 
@@ -34,3 +34,18 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
+
+
+
+
+class VisitorAdmin(admin.ModelAdmin):
+    list_display_links = None
+    list_display = ('name', 'phone', 'product', 'articleOfInterest')
+
+    def has_add_permission(self, request):
+        return False
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+admin.site.register(VisitorRecord, VisitorAdmin)
