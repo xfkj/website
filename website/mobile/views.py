@@ -108,6 +108,7 @@ def article(request, article_id=None, article_title=None):
 
 def category(request, category_id=None, category_title=None):
     article_id = request.GET.get('article_id')
+    article_obj = None
     if article_id is not None:
         article_obj = get_object_or_404(Article, pk=article_id)
 
@@ -139,6 +140,7 @@ def get_template_for_category(category):
         '优秀学员': 'mobile/students.html',
         '校区介绍': 'mobile/campus.html',
         '非凡头条': 'mobile/topArticles.html',
+        '非凡战绩': 'mobile/militaryExploits.html',
     }
 
     return template_map[cat_name]
