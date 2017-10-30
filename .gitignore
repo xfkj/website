@@ -3,3 +3,4 @@
 db.sqlite3
 ENV/
 .qiniu_pythonsdk_hostscache.json
+migrations/
