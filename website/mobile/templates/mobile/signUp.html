@@ -1,0 +1,58 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/signUp/signUp.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="header"></div>
+
+<div class="title">
+  非凡教育客服人员会在12h内联系你
+</div>
+
+<div class="signUp">
+  <form class="form">
+    <div class="form-control name">
+      <label for="name"></label>
+      <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
+    </div>
+    <div class="form-control mobile">
+      <label for="mobile"></label>
+      <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
+    </div>
+
+    <div class="form-control option">
+      <label for="option1">
+        <input id="option1" type="radio" value="gkcj" name="option">
+        高考冲刺
+      </label>
+      <label for="option2">
+        <input id="option2" type="radio" value="xkcj" name="option">
+        选考冲刺
+      </label>
+      <label for="option3">
+        <input id="option3" type="radio" value="myfz" name="option">
+        美院附中
+      </label>
+      <label for="option4">
+        <input id="option4" type="radio" value="xfgx" name="option">
+        小凡公学
+      </label>
+    </div>
+    <button disabled id="submitBtn" type="submit">立即预约</button>
+  </form>
+</div>
+
+<div class="popup">
+  <div class="mask"></div>
+  <div class="content">
+    <a href="./" class="back">返回首页</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{% static "js/signUp/signUp.js" %}"></script>
+{% endblock %}
