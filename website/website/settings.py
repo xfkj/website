@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'mobile.apps.MobileConfig',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,4 @@ QINIU_BUCKET_DOMAIN = 'ffwebsite.ffjy.org'
 
 DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuStorage'
 
-# STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
+STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
