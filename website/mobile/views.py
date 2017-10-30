@@ -55,7 +55,7 @@ def home(request):
         {
             'id': 1,
             'name': '王小一',
-            'subject':'语文',
+            'tags': [{'title': '语文'}],
             'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {

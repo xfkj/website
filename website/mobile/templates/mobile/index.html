@@ -11,7 +11,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="nEMT.html">
+        <a href="category/高考冲刺">
           <i class="icon gkcj"></i>
           <p>高考冲刺</p>
         </a>
@@ -124,7 +124,7 @@
           {% for article in categories.非凡名师 %}
           <a href="{% url 'article' article.id %}" class="swiper-slide">
             <div class="img">
-              <i class="label">{{ article.subject }}</i>
+              <i class="label">{{ article.tags.0.title }}</i>
               <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
             <p class="name">{{ article.name }}</p>
