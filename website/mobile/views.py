@@ -107,18 +107,26 @@ def article(request, article_id=None, article_title=None):
 
 
 def category(request, category_id=None, category_title=None):
+    article_id = request.GET.get('article_id')
+    if article_id is not None:
+        article_obj = get_object_or_404(Article, pk=article_id)
+
     if category_id is not None:
         category_obj = get_object_or_404(Category, pk=category_id)
     else:
         category_obj = get_object_or_404(Category, title=category_title)
     articles = category_obj.article_set.all()
+
+    if article_obj is None:
+        article_obj = articles[0]
+
     tags = extract_tags(articles)
-    print(tags)
     return render_to_response(get_template_for_category(category_obj),
         {
             'category': category_obj.title,
             'tags': tags,
             'articles': articles,
+            'top_article': article_obj,
         })
 
 
