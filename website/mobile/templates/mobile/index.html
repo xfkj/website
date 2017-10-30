@@ -3,7 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
-<link rel="stylesheet" href="{% static "css/home/index.css" %}">
+<link rel="stylesheet" href="{% static "mobile/css/home/index.css" %}">
 {% endblock %}
 
 {% block body %}
@@ -68,7 +68,7 @@
       {% for article in categories.课程产品 %}
       <li>
         <a href="{% url 'article' article.id %}">
-          <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
         </a>
       </li>
       {% endfor %}
@@ -90,7 +90,7 @@
             {{article.desc}}
           </p>
           <div class="img-wrap">
-            <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+            <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
         </a>
       </li>
@@ -105,7 +105,7 @@
         {% for article in categories.非凡战绩 %}
         <a href="{% url 'article' article.id %}" class="swiper-slide">
           <div class="img">
-            <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+            <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
           <p class="name">{{ article.title }}</p>
         </a>
@@ -125,7 +125,7 @@
           <a href="{% url 'article' article.id %}" class="swiper-slide">
             <div class="img">
               <i class="label">{{ article.subject }}</i>
-              <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.name }}" class="lazyload">
+              <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
             <p class="name">{{ article.name }}</p>
           </a>
@@ -141,7 +141,7 @@
         {% for article in categories.非凡校区 %}
         <a href="{% url 'article' article.id %}" class="swiper-slide">
           <div class="img">
-            <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+            <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
           <p class="name">{{ article.title }}</p>
         </a>
@@ -161,7 +161,7 @@
           <a href="{% url 'article' article.id %}" class="swiper-slide">
             <div class="img">
               <i class="label">{{ article.college }}</i>
-              <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.name }}" class="lazyload">
+              <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
             <p class="name">{{ article.college }}</p>
           </a>
@@ -173,7 +173,7 @@
     <!-- 为什么选择非凡 -->
     <div class="ad-why">
       <p>
-        <img src="{% static "img/common/placeholder.svg" %}" data-src="{% static "img/home/pt06.png" %}" alt="" class="lazyload">
+        <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
       </p>
     </div>
     <!-- 礼包 -->
@@ -185,7 +185,7 @@
       {% for article in categories.礼包 %}
       <div class="item">
         <a href="{% url 'article' article.id %}" class="swiper-slide">
-          <img src="{% static "img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
         </a>
       </div>
       {% endfor %}
@@ -201,5 +201,6 @@
 
 {% block foot %}
 {% include "mobile/_nav.html" with active_link='home' %}
-<script src="{% static "js/home/index.js" %}"></script>
+<script src="{% static "mobile/js/home/index.js" %}"></script>
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 {% endblock %}

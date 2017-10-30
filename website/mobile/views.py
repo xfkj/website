@@ -14,41 +14,41 @@ def home(request):
         '课程产品': [
         {
             'id': 1,
-            'cover': {'url': '../static/img/home/banner02.png'},
+            'cover': {'url': '../static/mobile/img/home/banner02.png'},
         },
         {
             'id': 1,
-            'cover': {'url': '../static/img/home/banner02.png'},
+            'cover': {'url': '../static/mobile/img/home/banner02.png'},
         },
         {
             'id': 1,
-            'cover': {'url': '../static/img/home/banner02.png'},
+            'cover': {'url': '../static/mobile/img/home/banner02.png'},
         },
         {
             'id': 1,
-            'cover': {'url': '../static/img/home/banner02.png'},
+            'cover': {'url': '../static/mobile/img/home/banner02.png'},
         },
         ],
         '非凡头条': [
         {
             'id': 1,
             'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/img/home/pt01.png'},
+            'cover': {'url': '../static/mobile/img/home/pt01.png'},
         },
         {
             'id': 1,
             'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/img/home/pt01.png'},
+            'cover': {'url': '../static/mobile/img/home/pt01.png'},
         },
         {
             'id': 1,
             'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/img/home/pt01.png'},
+            'cover': {'url': '../static/mobile/img/home/pt01.png'},
         },
         {
             'id': 1,
             'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/img/home/pt01.png'},
+            'cover': {'url': '../static/mobile/img/home/pt01.png'},
         },
         ],
         '非凡名师': [
@@ -56,37 +56,37 @@ def home(request):
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
         {
             'id': 1,
             'name': '王小一',
             'subject':'语文',
-            'cover': {'url':'../static/img/home/teacher1.png'}
+            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
         },
 
         ],
@@ -109,3 +109,6 @@ def category(request, category_id):
             'category': category_obj.title,
             'articles': articles,
         })
+
+def signUp(request):
+    return render_to_response('mobile/signUp.html')
