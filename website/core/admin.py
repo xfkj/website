@@ -9,9 +9,16 @@ for m in [VisitorRecord, Category, Tag]:
     admin.site.register(m)
 
 
-class SummernoteAdmin(SummernoteModelAdmin):
-    pass
+class ArticleAdmin(SummernoteModelAdmin):
+    list_display = ('title',
+        'category',
+        'promote',
+        'weight',
+    )
+    list_display_links = ('title', )
+    list_editable = ('category', 'promote', 'weight')
+    list_filter = ('category', 'promote', 'tags')
 
 
 
-admin.site.register(Article, SummernoteAdmin)
+admin.site.register(Article, ArticleAdmin)
