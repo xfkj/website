@@ -1,0 +1,39 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/receive/index.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="header">
+    <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+  </div>
+  <div class="signUp">
+      <form class="form">
+          <div class="form-control name">
+              <label for="name"></label>
+              <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
+          </div>
+          <div class="form-control mobile">
+              <label for="mobile"></label>
+              <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
+          </div>
+          <button disabled id="submitBtn" type="submit">立即领取</button>
+      </form>
+  </div>
+</div>
+
+<div class="popup">
+    <div class="mask"></div>
+    <div class="content">
+        <a href="./" class="back">返回首页</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{% static "mobile/js/receive/index.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}
