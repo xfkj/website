@@ -11,7 +11,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="category/高考冲刺">
+        <a href="{% url 'category_by_title' '高考冲刺' %}">
           <i class="icon gkcj"></i>
           <p>高考冲刺</p>
         </a>
@@ -41,7 +41,7 @@
         </a>
       </li>
       <li>
-        <a href="students.html">
+        <a href="{% url 'category_by_title' '优秀学员' %}">
           <i class="icon yxxy"></i>
           <p>优秀学员</p>
         </a>

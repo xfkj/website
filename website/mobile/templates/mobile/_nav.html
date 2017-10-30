@@ -1,4 +1,4 @@
-<div class="navigation {% block headroom %}{% endblock %}">
+<div class="navigation {% block headroom %}headroom{% endblock %}">
   <div class="wrap">
     <div class="left">
       <a href="{% url 'home' %}" {% if active_link == "home" %} class="nav-home active" {% else %} class="nav-home" {% endif %}>

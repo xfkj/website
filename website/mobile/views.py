@@ -128,6 +128,7 @@ def get_template_for_category(category):
     template_map = {
         '非凡名师': 'mobile/teachers.html',
         '礼包': 'mobile/goAndGet.html',
+        '优秀学员': 'mobile/students.html',
     }
 
     return template_map[cat_name]
@@ -136,6 +137,7 @@ def get_template_for_category(category):
 def get_template_for_article(article):
     template_map = {
         '非凡名师': 'mobile/masterDetails.html',
+        '优秀学员': 'mobile/studentDetails.html',
         '礼包': 'mobile/receive.html',
     }
     return template_map[article.category.title]
