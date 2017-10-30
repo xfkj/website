@@ -1,6 +1,7 @@
+from django import forms
 from django.contrib import admin
 from .models import Article, VisitorRecord, Category, Tag
-from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.widgets import SummernoteWidget
 
 
 # Register your models here.
@@ -9,7 +10,17 @@ for m in [VisitorRecord, Category, Tag]:
     admin.site.register(m)
 
 
-class ArticleAdmin(SummernoteModelAdmin):
+class ArticleAdminForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        widgets = {
+            'content': SummernoteWidget(),
+        }
+        fields = '__all__'
+
+
+class ArticleAdmin(admin.ModelAdmin):
+    form = ArticleAdminForm
     list_display = ('title',
         'category',
         'promote',
