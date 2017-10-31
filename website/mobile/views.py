@@ -141,6 +141,7 @@ def get_template_for_category(category):
         '校区介绍': 'mobile/campus.html',
         '非凡头条': 'mobile/topArticles.html',
         '非凡战绩': 'mobile/militaryExploits.html',
+        '高考冲刺': 'mobile/nEMT.html',
     }
 
     return template_map[cat_name]
