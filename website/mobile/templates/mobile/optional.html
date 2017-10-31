@@ -3,8 +3,6 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static "mobile/css/optional/optional.css" %}">
-<link rel="stylesheet" href="{% static "mobile/css/nEMT/nEMT.css" %}">
-<link rel="stylesheet" href="{% static "mobile/css/signUp/signUp.css" %}">
 {% endblock %}
 
 {% block body %}
@@ -14,29 +12,31 @@
     {{ article.content | safe }}
 </div>
 
+<div>
+    <div class="signUp">
+        <form>
+            <div>
+                <i></i>
+                <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
+            </div>
+            <div>
+                <i></i>
+                <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
+            </div>
+            <div>
+                <button id="submitBtn">立即报名</button>
+            </div>
+            <input type="hidden" name="aim" value="报名">
+            <input type="hidden" name="production" value="{{ article.title }}">
+        </form>
+    </div>
+</div>
+
 <div class="popup">
   <div class="mask"></div>
   <div class="content">
     <a href="{% url 'home' %}" class="back">返回首页</a>
   </div>
-</div>
-
-<div class="signUp">
-    <form id="baoming">
-        <div>
-            <i></i>
-            <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
-        </div>
-        <div>
-            <i></i>
-            <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
-        </div>
-        <input type="hidden" name="aim" value="报名">
-        <input type="hidden" name="course" value="{{ article.title }}">
-        <div>
-            <button id="submitBtn">立即报名</button>
-        </div>
-    </form>
 </div>
 
 <script type="text/javascript">
@@ -52,11 +52,11 @@ $('#baoming').on('submit', function(e) {
         alert('手机号码不符合格式')
     } else {
       $('#submitBtn').disabled = true;
-      console.log(data);
+      $('.popup').show();
       // $.ajax({
       //   type: 'post',
       //   data: data,
-      //   url: 'api/visitors',
+      //   url: 'core/api/visitors',
       //   success: function () {
       //     $('.popup').show();
       //   },

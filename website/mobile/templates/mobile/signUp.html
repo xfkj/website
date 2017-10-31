@@ -56,7 +56,7 @@
 <script type="text/javascript">
 $('#yuyue').on('submit', function(e) {
     e.preventDefault();
-    var fields = $('.form').serializeArray();
+    var fields = $('#yuyue').serializeArray();
     var data = {};
     fields.forEach(item => {
         data[item.name] = item.value;
@@ -69,7 +69,7 @@ $('#yuyue').on('submit', function(e) {
       $.ajax({
         type: 'post',
         data: data,
-        url: 'api/visitors',
+        url: 'core/api/visitors',
         success: function () {
           $('.popup').show();
         },

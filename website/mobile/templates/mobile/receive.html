@@ -21,7 +21,7 @@
               <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
           </div>
           <input type="hidden" name="aim" value="领取礼包">
-          <input type="hidden" name="gift_name" value="{{ article.title }}">
+          <input type="hidden" name="production" value="{{ article.title }}">
           <button disabled id="submitBtn" type="submit">立即领取</button>
       </form>
   </div>
@@ -49,17 +49,17 @@ $('#lingqu').on('submit', function(e) {
       $('#submitBtn').disabled = true
       console.log(data);
       $('.popup').show();
-      // $.ajax({
-      //   type: 'post',
-      //   data: data,
-      //   url: 'api/visitors',
-      //   success: function () {
-      //     $('.popup').show();
-      //   },
-      //   error: function () {
-      //     alert('系统忙，请稍后再试...')
-      //   }
-      // })
+      $.ajax({
+        type: 'post',
+        data: data,
+        url: 'core/api/visitors',
+        success: function () {
+          $('.popup').show();
+        },
+        error: function () {
+          alert('系统忙，请稍后再试...')
+        }
+      })
     }
 })
 </script>
