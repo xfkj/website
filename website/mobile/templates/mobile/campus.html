@@ -14,7 +14,7 @@
         <div class="swiper-wrapper">
             {% for article in articles %}
             <a class="swiper-slide {% if forloop.counter == 0 %} active {% endif %}">
-                <span>{{ article.title }}</span>
+                <span>{{article.title}}</span>
             </a>
             {% endfor %}
         </div>
@@ -29,22 +29,6 @@
         </div>
         {% endfor %}
     </div>
-</div>
-
-<div class="signUp">
-    <form>
-        <div>
-            <i></i>
-            <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
-        </div>
-        <div>
-            <i></i>
-            <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
-        </div>
-        <div>
-            <button id="submitBtn">立即报名</button>
-        </div>
-    </form>
 </div>
 
 {% endblock %}

@@ -2,32 +2,16 @@
 {% load staticfiles %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/optional/optional.css" %}">
 <link rel="stylesheet" href="{% static "mobile/css/nEMT/nEMT.css" %}">
 <link rel="stylesheet" href="{% static "mobile/css/signUp/signUp.css" %}">
-<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
 {% endblock %}
 
 {% block body %}
 <div class="head"></div>
 
-<div class="nav swiper-container">
-    <div class="swiper-wrapper">
-      {% for article in articles %}
-        <a class="swiper-slide {% if forloop.counter == 0 %} active {% endif %}">
-            <span>{{ article.title }}</span>
-        </a>
-      {% endfor %}
-    </div>
-</div>
-
-<div class="content nav-content">
-    <div class="swiper-wrapper">
-        {% for article in articles %}
-        <div class="nav-module swiper-slide swiper-no-swiping">
-            {{ article.content | safe }}
-        </div>
-        {% endfor %}
-    </div>
+<div class="content">
+    {{ article.content | safe }}
 </div>
 
 <div class="popup">
@@ -47,11 +31,11 @@
             <i></i>
             <input required type="text" id="mobile" name="mobile" placeholder="请输入您的手机号">
         </div>
+        <input type="hidden" name="aim" value="报名">
+        <input type="hidden" name="course" value="{{ article.title }}">
         <div>
             <button id="submitBtn">立即报名</button>
         </div>
-        <input type="hidden" name="aim" value="报名">
-        <input type="hidden" name="course" value="高考冲刺">
     </form>
 </div>
 
@@ -68,17 +52,18 @@ $('#baoming').on('submit', function(e) {
         alert('手机号码不符合格式')
     } else {
       $('#submitBtn').disabled = true;
-      $.ajax({
-        type: 'post',
-        data: data,
-        url: 'api/visitors',
-        success: function () {
-          $('.popup').show();
-        },
-        error: function () {
-          alert('系统忙，请稍后再试...')
-        }
-      })
+      console.log(data);
+      // $.ajax({
+      //   type: 'post',
+      //   data: data,
+      //   url: 'api/visitors',
+      //   success: function () {
+      //     $('.popup').show();
+      //   },
+      //   error: function () {
+      //     alert('系统忙，请稍后再试...')
+      //   }
+      // })
     }
 })
 </script>
@@ -87,7 +72,6 @@ $('#baoming').on('submit', function(e) {
 
 {% block foot %}
 {% include 'mobile/_nav.html' %}
-<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "utils/headroom/headroom.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
 {% endblock %}

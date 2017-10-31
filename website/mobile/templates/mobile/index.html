@@ -17,19 +17,19 @@
         </a>
       </li>
       <li>
-        <a href="optional.html">
+        <a href="{% url 'article_by_title' '选考冲刺' %}">
           <i class="icon xkcj"></i>
           <p>选考冲刺</p>
         </a>
       </li>
       <li>
-        <a href="highSchool.html">
+        <a href="{% url 'article_by_title' '美院附中' %}">
           <i class="icon myfz"></i>
           <p>美院附中</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="{% url 'article_by_title' '小凡公学' %}">
           <i class="icon xfgx"></i>
           <p>小凡公学</p>
         </a>
@@ -53,7 +53,7 @@
         </a>
       </li>
       <li>
-        <a href="about.html">
+        <a href="{% url 'article_by_title' '关于非凡' %}">
           <i class="icon gyff"></i>
           <p>关于非凡</p>
         </a>
@@ -103,7 +103,7 @@
     <div class="st-container">
       <div class="swiper-wrapper">
         {% for article in categories.非凡战绩 %}
-        <a href="{% url 'article' article.id %}" class="swiper-slide">
+        <a href="{% url 'category_by_title' '非凡战绩' %}?article_id={{article.id}}" class="swiper-slide">
           <div class="img">
             <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
@@ -124,10 +124,10 @@
           {% for article in categories.非凡名师 %}
           <a href="{% url 'article' article.id %}" class="swiper-slide">
             <div class="img">
-              <i class="label">{{ article.tags.0.title }}</i>
+              <i class="label">{{ article.tags.all.0 }}</i>
               <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
-            <p class="name">{{ article.name }}</p>
+            <p class="name">{{ article.title }}</p>
           </a>
           {% endfor %}
         </div>
@@ -138,8 +138,8 @@
     <h2>非凡校区</h2>
     <div class="school-container">
       <div class="swiper-wrapper">
-        {% for article in categories.非凡校区 %}
-        <a href="{% url 'article' article.id %}" class="swiper-slide">
+        {% for article in categories.校区介绍 %}
+        <a href="{% url 'category_by_title' '校区介绍' %}" class="swiper-slide">
           <div class="img">
             <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
@@ -173,7 +173,7 @@
     <!-- 为什么选择非凡 -->
     <div class="ad-why">
       <p>
-        <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+        <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{% static "mobile/img/home/pt06.png" %}" alt="" class="lazyload">
       </p>
     </div>
     <!-- 礼包 -->

@@ -1,7 +1,7 @@
 <div class="navigation {% block headroom %}headroom{% endblock %}">
   <div class="wrap">
     <div class="left">
-      <a href="{% url 'home' %}" {% if active_link == "home" %} class="nav-home active" {% else %} class="nav-home" {% endif %}>
+      <a href="{% url 'home' %}"  class="nav-home {% if active_link == "home" %}active {% endif %}">
         <i class="icon"></i>
         <span class="name">首页</span>
       </a>
@@ -20,7 +20,7 @@
         <i class="icon"></i>
         <span class="name">咨询</span>
       </a>
-      <a href="{% url 'category_by_title' '礼包' %}" class="nav-gift">
+      <a href="/m/category/礼包" class="nav-gift {% if active_link == "/m/category/礼包" %}active {% endif %}">
         <i class="icon"></i>
         <span class="name">领取</span>
       </a>

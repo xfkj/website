@@ -9,90 +9,7 @@ def home(request):
     for cat in categories:
         articles = cat.article_set.filter(promote=True)
         data['categories'][cat.title] = articles
-    return render_to_response('mobile/index.html', {
-    'categories': {
-        '课程产品': [
-        {
-            'id': 1,
-            'cover': {'url': '../static/mobile/img/home/banner02.png'},
-        },
-        {
-            'id': 1,
-            'cover': {'url': '../static/mobile/img/home/banner02.png'},
-        },
-        {
-            'id': 1,
-            'cover': {'url': '../static/mobile/img/home/banner02.png'},
-        },
-        {
-            'id': 1,
-            'cover': {'url': '../static/mobile/img/home/banner02.png'},
-        },
-        ],
-        '非凡头条': [
-        {
-            'id': 1,
-            'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/mobile/img/home/pt01.png'},
-        },
-        {
-            'id': 1,
-            'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/mobile/img/home/pt01.png'},
-        },
-        {
-            'id': 1,
-            'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/mobile/img/home/pt01.png'},
-        },
-        {
-            'id': 1,
-            'desc': '非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条非凡头条',
-            'cover': {'url': '../static/mobile/img/home/pt01.png'},
-        },
-        ],
-        '非凡名师': [
-        {
-            'id': 1,
-            'name': '王小一',
-            'tags': [{'title': '语文'}],
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-        {
-            'id': 1,
-            'name': '王小一',
-            'subject':'语文',
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-        {
-            'id': 1,
-            'name': '王小一',
-            'subject':'语文',
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-        {
-            'id': 1,
-            'name': '王小一',
-            'subject':'语文',
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-        {
-            'id': 1,
-            'name': '王小一',
-            'subject':'语文',
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-        {
-            'id': 1,
-            'name': '王小一',
-            'subject':'语文',
-            'cover': {'url':'../static/mobile/img/home/teacher1.png'}
-        },
-
-        ],
-    }
-
-})
+    return render_to_response('mobile/index.html', data)
 
 def article(request, article_id=None, article_title=None):
     if article_id is not None:
@@ -153,6 +70,8 @@ def get_template_for_article(article):
         '优秀学员': 'mobile/studentDetails.html',
         '礼包': 'mobile/receive.html',
         '非凡头条': 'mobile/topArticleDetails.html',
+        '课程产品': 'mobile/optional.html',
+        '普通文章': 'mobile/about.html',
     }
     return template_map[article.category.title]
 

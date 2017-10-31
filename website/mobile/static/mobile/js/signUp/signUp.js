@@ -35,19 +35,4 @@ $(document).ready(function () {
         }
         flag ? $('#submitBtn').attr('disabled', 'disabled') : $('#submitBtn').attr('disabled', null);
     }
-
-    /*$('#submitBtn').on('click', function(e) {
-        e.preventDefault();
-        var fields = $('.form').serializeArray();
-        var data = {};
-        fields.forEach(item => {
-            data[item.name] = item.value;
-        })
-        var phoneReg = /^1(3|4|5|7|8)\d{9}$/;
-        if (!phoneReg.test(data.mobile)) {
-            alert('手机号码不符合格式')
-        } else {
-            //$('.popup').show();
-        }
-    })*/
 });

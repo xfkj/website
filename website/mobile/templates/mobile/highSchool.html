@@ -1,0 +1,35 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/highSchool/index.css" %}">
+<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="header">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508936538353&di=9758ccb7c4fd2f231f32c9312456d9f1&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201507%2F26%2F20150726223738_XmVxE.jpeg" alt="" class="lazyload">
+    </div>
+    <div class="swiper-slide">
+      <img data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508936585972&di=2428800ac4b0b131d0006436556c1c8c&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201502%2F25%2F20150225203042_CadcH.jpeg" alt="" class="lazyload">
+    </div>
+    <div class="swiper-slide">
+      <img data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508936538353&di=9758ccb7c4fd2f231f32c9312456d9f1&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201507%2F26%2F20150726223738_XmVxE.jpeg" alt="" class="lazyload">
+    </div>
+    <div class="swiper-slide">
+      <img data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508936616623&di=dfb056d4d736c42b9ffe48e740613b4d&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201606%2F26%2F20160626171209_JQ3ce.jpeg" alt="" class="lazyload">
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+{% endblock %}
+
+{% block foot %}
+{% include 'mobile/_nav.html' %}
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
+<script src="{% static "utils/headroom/headroom.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}

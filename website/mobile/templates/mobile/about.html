@@ -1,0 +1,23 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "mobile/css/about/about.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="head">
+    <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+</div>
+
+<div class="content">
+    {{ article.content | safe }}
+</div>
+
+{% endblock %}
+
+{% block foot %}
+{% include 'mobile/_nav.html' %}
+<script src="{% static "utils/headroom/headroom.min.js" %}"></script>
+<script src="{% static "mobile/js/common/index.js" %}"></script>
+{% endblock %}
