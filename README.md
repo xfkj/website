@@ -15,3 +15,9 @@ each time a new package is added in the virtual ENV, generate a new requirements
 When you add any new static files, please use collectstatic command to collect static files to qiniu.
 $ ./manage.py collectstatic
 
+
+
+* Run in gunicorn
+$ cd ffwebsite/website
+$ gunicorn website.wsgi
+
