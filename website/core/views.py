@@ -8,12 +8,11 @@ from core.models import VisitorRecord, Article
 @csrf_exempt
 def visitor(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        phone = request.POST.get('mobile')
-        product = request.POST.get('product')
-        article_id = request.POST.get('article_id')
-        article = Article.objects.get(pk=article_id)
-        VisitorRecord(name=name, phone=mobile, product=product, articleOfInterest=article).save()
+        name = request.POST.get('name') or ''
+        phone = request.POST.get('mobile') or ''
+        product = request.POST.get('product') or ''
+        aim = request.POST.get('aim') or ''
+        VisitorRecord(name=name, phone=phone, product=product, aim=aim).save()
         return HttpResponse(status=200)
     else:
         return HttpResponse(status=400, reason='only POST is accepted')

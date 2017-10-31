@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-
+from django.utils import timezone as django_tz
 
 
 class Category(models.Model):
@@ -62,8 +62,9 @@ class Article(models.Model):
 class VisitorRecord(models.Model):
     name = models.CharField(max_length=100, verbose_name='访客姓名')
     phone = models.CharField(max_length=30, verbose_name='电话')
-    product = models.CharField(max_length=100, verbose_name='关注产品')
-    articleOfInterest = models.ForeignKey(Article, verbose_name='感兴趣的文章', on_delete=models.CASCADE)
+    product = models.CharField(max_length=100, verbose_name='选择的产品', blank=True)
+    aim = models.CharField(max_length=100, verbose_name='来源', blank=True)
+    created_at = models.DateTimeField(default=django_tz.now, verbose_name='提交时间')
 
 
     def __str__(self):

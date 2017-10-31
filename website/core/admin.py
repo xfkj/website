@@ -40,7 +40,7 @@ admin.site.register(Article, ArticleAdmin)
 
 class VisitorAdmin(admin.ModelAdmin):
     list_display_links = None
-    list_display = ('name', 'phone', 'product', 'articleOfInterest')
+    list_display = ('name', 'phone', 'product', 'aim', 'created_at')
 
     def has_add_permission(self, request):
         return False
