@@ -163,7 +163,7 @@
               <i class="label">{{ article.college }}</i>
               <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
-            <p class="name">{{ article.college }}</p>
+            <p class="name">{{ article.tags.all.0 }}</p>
           </a>
           {% endfor %}
         </div>
