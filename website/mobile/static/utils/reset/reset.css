@@ -77,3 +77,14 @@ img {
 img {
 	max-width: 100%;
 }
+
+/* 视频显示 */
+.note-video-clip{
+	max-width: 100%;
+}
+
+
+/* 标题显示不下 */
+.title{
+	min-height: .74667rem;
+}
