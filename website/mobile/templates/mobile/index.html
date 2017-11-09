@@ -160,10 +160,10 @@
           {% for article in categories.优秀学员 %}
           <a href="{% url 'article' article.id %}" class="swiper-slide">
             <div class="img">
-              <i class="label">{{ article.college }}</i>
+              <i class="label">{{ article.tags.all.0 }}</i>
               <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
             </div>
-            <p class="name">{{ article.tags.all.0 }}</p>
+            <p class="name">{{ article.title }}</p>
           </a>
           {% endfor %}
         </div>
