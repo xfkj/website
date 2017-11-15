@@ -1,0 +1,50 @@
+{% extends 'mobile/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "admin/css/campus/campus.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="page">
+
+</div>
+
+<div class="frontCover">
+    <div>
+        <p>我们的校区</p>
+    </div>
+</div>
+
+<div class="main">
+    <div class="campusIntroduction">
+
+        {% for campus in campuslist %}
+            <li>
+                <div class="campusImg">
+                    <img src="" alt="">
+                </div>
+
+                <div class="interval"></div>
+
+                <div class="briefIntroduction">
+                    <div class="title">硅谷校区</div>
+                    <div class="content">
+
+                    </div>
+
+                    <div class="btn">
+                        <i></i>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block foot %}
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
+{% endblock %}
