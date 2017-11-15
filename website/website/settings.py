@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'mobile.apps.MobileConfig',
+    'pc.apps.PcConfig',
     'django_summernote',
 ]
 
