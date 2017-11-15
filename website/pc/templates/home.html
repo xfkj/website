@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home</title>
+</head>
+<body>
+    <h1>非凡名师</h1>
+    {% for a in 非凡名师 %}
+    <div>
+     {{ a.title}}, {{a.tags.all.0}}
+    </div>
+    {% endfor %}
+    <h1>优秀学员</h1>
+    {% for a in 优秀学员 %}
+    <div>
+     {{ a.title}}, {{a.tags.all.0}}
+    </div>
+    {% endfor %}
+</body>
+</html>
