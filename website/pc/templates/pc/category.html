@@ -1,8 +1,8 @@
-{% extends 'mobile/base.html' %}
+{% extends 'pc/base.html' %}
 {% load staticfiles %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static "admin/css/campus/campus.css" %}">
+    <link rel="stylesheet" href="{% static "css/category/category.css" %}">
 {% endblock %}
 
 {% block body %}
@@ -19,18 +19,18 @@
 <div class="main">
     <div class="campusIntroduction">
 
-        {% for campus in campuslist %}
+        {% for a in articles %}
             <li>
                 <div class="campusImg">
-                    <img src="" alt="">
+                    <img src="{{a.cover.url}}" alt="{{a.title}}">
                 </div>
 
                 <div class="interval"></div>
 
                 <div class="briefIntroduction">
-                    <div class="title">硅谷校区</div>
+                    <div class="title">{{a.title}}</div>
                     <div class="content">
-
+                        {{a.desc}}
                     </div>
 
                     <div class="btn">
