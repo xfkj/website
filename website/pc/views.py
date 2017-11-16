@@ -47,16 +47,14 @@ def category(request, category_id=None, category_title=None):
 
 def get_template_for_category(category):
     cat_name = category.title
+    DEFAULT_TEMPLATE = "pc/category.html"
     template_map = {
         '非凡名师': 'pc/people.html',
         '优秀学员': 'pc/people.html',
-        '校区介绍': 'pc/category.html',
         '非凡头条': 'pc/information.html',
-        '非凡战绩': 'pc/category.html',
-        '高考冲刺': 'pc/category.html',
     }
 
-    return template_map[cat_name]
+    return cat_name in template_map and template_map[cat_name] or DEFAULT_TEMPLATE
 
 
 def get_template_for_article(article):
