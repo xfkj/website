@@ -15,6 +15,7 @@ class ArticleAdminForm(forms.ModelForm):
         model = Article
         widgets = {
             'content': SummernoteWidget(),
+            'pc_content': SummernoteWidget(),
         }
         fields = '__all__'
 

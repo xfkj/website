@@ -18,7 +18,11 @@
 
 <div class="main">
   <div class="centre">
-    {{article.content | safe}}
+    {% if article.pc_content %}
+      {{article.pc_content | safe}}
+    {% else %}
+      {{article.content | safe}}
+    {% endif %}
   </div>
 </div>
 {% endblock %}
