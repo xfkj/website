@@ -13,7 +13,7 @@
     <div class="nav swiper-container">
         <div class="swiper-wrapper">
             {% for article in articles %}
-            <a class="swiper-slide {% if forloop.counter == 0 %} active {% endif %}">
+            <a class="swiper-slide {% if article == top_article %} active {% endif %}">
                 <span>{{article.title}}</span>
             </a>
             {% endfor %}
