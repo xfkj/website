@@ -33,13 +33,12 @@ def category(request, category_id=None, category_title=None):
     articles = category_obj.article_set.all()
 
     tag_string = request.GET.get('tag', '')
-    print('tag'+tag_string)
     if tag_string != '':
         articles = articles.filter(tags__tag=tag_string)
 
     return render_to_response(
         get_template_for_category(category_obj), {
-            'category': category_obj.title,
+            'category': category_obj,
             'articles': articles,
         })
 
