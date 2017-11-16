@@ -1,0 +1,47 @@
+{% extends 'pc/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/information/information.css" %}"> 
+
+{% endblock %}
+
+{% block body %}
+<div class="page">
+    {% include 'pc/_nav.html' %}
+</div>
+
+<div class="frontCover">
+</div>
+
+<div class="main">
+    <div class="centre">
+      {% for a in articles %}
+      <div class="information">
+          <div class="information-img">
+              <img src="{{a.cover.url}}" alt="{{a.title}}">
+          </div>
+    
+          <div class="content">
+            <div class="information-title">
+              <p>{{a.title}}</p>
+            </div>
+    
+            <div class="summary">
+              <p>
+                {{a.desc}}
+              </p>
+            </div>
+    
+            <div class="btn">
+                <a href="{% url 'pc_article' a.id %}">
+                <button>查看详情</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

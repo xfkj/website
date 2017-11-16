@@ -1,0 +1,144 @@
+{% extends 'pc/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+{% endblock %}
+{% block body %}
+<div class="page">
+{% include 'pc/_nav.html' %}
+<div class="banner"></div>
+<div class="toutiao">
+  <div class="container">
+    <div class="title"></div>
+    <div class="look-all">
+      <a href="#">查看更多</a>
+    </div>
+    <div class="main">
+      {% for a in categories.非凡头条 %}
+      <div class="item" style="background-image: url('{{ a.cover.url }}')">
+        <div class="blur-container act-item-cover sub{{forloop.counter}}">
+          <strong>
+            <a href="{% url 'pc_article' a.id %}">{{a.desc}}</a>
+          </strong>
+          <p></p>
+          <style>
+            .sub{{forloop.counter}}:before {
+              background-image: url("{{ a.cover.url }}");
+            }
+          </style>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="zhanji">
+  <div class="container">
+    <div class="title"></div>
+    <div class="look-all">
+      <a href="{% url 'pc_category_by_title' '非凡战绩' %}">查看更多</a>
+    </div>
+    <div class="main">
+      {% for a in categories.非凡战绩 %}
+        <div class="item" style="background-image: url('{{ a.cover.url }}')">
+          <div class="blur-container">
+            <p>{{a.title}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="people teacher">
+  <div class="container">
+    <div class="title"></div>
+    <div class="look-all">
+      <a href="{% url 'pc_category_by_title' '非凡名师' %}">查看更多</a>
+    </div>
+    <div class="main people-main">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+        <div class="swiper-wrapper">
+          {% for a in categories.非凡名师 %}
+            <div class="item swiper-slide" style="background-image: url('{{ a.cover.url }}')">
+              <a class="blur-container" href="{% url 'pc_article' a.id %}">
+                <div class="top">{{a.title}}</div>
+                <div class="p-content">
+                  <div class="name">{{a.title}}</div>
+                  <i class="icon"></i>
+                  <div class="desc">
+                    {{a.desc}}
+                  </div>
+                  <div class="label">
+                    {{ a.tags.all.0 }}
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toutiao school">
+  <div class="container">
+    <div class="title"></div>
+    <div class="look-all">
+      <a href="{% url 'pc_category_by_title' '校区介绍' %}">查看更多</a>
+    </div>
+    <div class="main">
+      {% for a in categories.校区介绍 %}
+      <div class="item" style="background-image: url('{{ a.cover.url }}')">
+        <div class="blur-container act-item-cover sub{{forloop.counter}}">
+          <strong>
+            <a href="{% url 'pc_article' a.id %}">{{ a.title }}</a>
+          </strong>
+          <style>
+            .sub{{forloop.counter}}:before {
+              background-image: url("{{ a.cover.url }}");
+            }
+          </style>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="people student">
+  <div class="container">
+    <div class="title"></div>
+    <div class="look-all">
+      <a href="{% url 'category_by_title' '优秀学员' %}">查看更多</a>
+    </div>
+    <div class="main people-main">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-wrapper">
+        {% for a in categories.优秀学员 %}
+          <div class="item swiper-slide" style="background-image: url('{{ a.cover.url }}')">
+            <a class="blur-container" href="{% url 'pc_article' a.id %}">
+              <div class="top">{{a.title}}</div>
+              <div class="p-content">
+                <div class="name">{{a.title}}</div>
+                <i class="icon"></i>
+                <div class="desc">
+                  {{a.desc}}
+                </div>
+                <div class="label">
+                  {{ a.tags.all.0 }}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
+<script src="{% static "js/home/index.js" %}"></script>
+{% endblock %}

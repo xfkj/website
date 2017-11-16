@@ -39,15 +39,18 @@
 
   <!-- rem flexible -->
 
-    <!-- rem flexible -->
-    <link rel="stylesheet" href="{% static "utils/normalize/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+  <!-- rem flexible -->
+  <link rel="stylesheet" href="{% static "utils/normalize/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "css/home/home.css" %}">  
+  <script src="{% static "utils/jquery/jquery.min.js" %}"></script>
 
   {% block head %}{% endblock %}
   <title>非凡教育</title>
 </head>
 <body>
   {% block body %}{% endblock %}
-  {% block foot %}{% endblock %}
+  {% include 'pc/_footer.html' %}
+  {% block foot %}{% endblock %}  
+  <script src="{% static "js/home/index.js" %}"></script>
 </body>
 </html>

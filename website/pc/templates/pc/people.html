@@ -1,0 +1,42 @@
+{% extends 'pc/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/teachers/teachers.css" %}"> 
+
+{% endblock %}
+
+{% block body %}
+<div class="page">
+    {% include 'pc/_nav.html' %}
+</div>
+
+<div class="frontCover">
+</div>
+
+<div class="main">
+    <div class="centre">
+      {% for a in articles %}
+      <div class="teacher">
+          <a href="{% url 'pc_article' a.id %}">
+
+          <div class="teacher-img">
+              <img src="{{a.cover.url}}" alt="{{a.title}}">
+          </div>
+
+          <div class="teacher-introduce" >
+            <div class="teacher-name"><p>{{a.title}}</p></div>
+            <div class="content">
+              <p>
+                {{a.desc}}
+              </p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

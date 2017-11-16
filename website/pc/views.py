@@ -3,10 +3,12 @@ from core.models import Article, Category
 
 def home(request):
     data = {}
+    data['categories'] = {}
+
     categories = Category.objects.all()
     for cat in categories:
         articles = cat.article_set.filter(promote=True)
-        data[cat.title] = articles
+        data['categories'][cat.title] = articles
     return render_to_response('pc/home.html', data)
 
 def article(request, article_id=None, article_title=None):
@@ -14,7 +16,10 @@ def article(request, article_id=None, article_title=None):
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
         article_obj = get_object_or_404(Article, title=article_title)
-    return render_to_response(get_template_for_article(article_obj), props(article_obj))
+    return render_to_response(get_template_for_article(article_obj),
+        {
+            'article': article_obj
+        })
 
 
 
@@ -37,10 +42,15 @@ def category(request, category_id=None, category_title=None):
 def get_template_for_category(category):
     cat_name = category.title
     template_map = {
-        '非凡名师': 'pc/teachers.html',
+        '非凡名师': 'pc/people.html',
+        '优秀学员': 'pc/people.html',
+        '校区介绍': 'pc/category.html',
+        '非凡头条': 'pc/information.html',
+        '非凡战绩': 'pc/category.html',
+        '高考冲刺': 'pc/category.html',
     }
 
-    return cat_name in template_map and template_map[cat_name] or 'pc/category.html'
+    return template_map[cat_name]
 
 
 def get_template_for_article(article):

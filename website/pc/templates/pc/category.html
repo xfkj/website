@@ -2,18 +2,16 @@
 {% load staticfiles %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static "css/category/category.css" %}">
+<link rel="stylesheet" href="{% static "css/campus/campus.css" %}"> 
+    <!-- <link rel="stylesheet" href="{% static "css/category/category.css" %}"> -->
 {% endblock %}
 
 {% block body %}
 <div class="page">
-
+    {% include 'pc/_nav.html' %}
 </div>
 
 <div class="frontCover">
-    <div>
-        <p>我们的校区</p>
-    </div>
 </div>
 
 <div class="main">
@@ -24,17 +22,18 @@
                 <div class="campusImg">
                     <img src="{{a.cover.url}}" alt="{{a.title}}">
                 </div>
-
+            
                 <div class="interval"></div>
-
+            
                 <div class="briefIntroduction">
                     <div class="title">{{a.title}}</div>
                     <div class="content">
                         {{a.desc}}
                     </div>
-
                     <div class="btn">
+                    <a href="{% url 'pc_article' a.id %}">
                         <i></i>
+                    </a>
                     </div>
                 </div>
             </li>
@@ -43,8 +42,4 @@
     </div>
 </div>
 
-{% endblock %}
-
-{% block foot %}
-<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 {% endblock %}
