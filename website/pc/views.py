@@ -18,6 +18,7 @@ def article(request, article_id=None, article_title=None):
         article_obj = get_object_or_404(Article, title=article_title)
     return render_to_response(get_template_for_article(article_obj),
         {
+            'link': article_title,
             'article': article_obj
         })
 
@@ -33,6 +34,7 @@ def category(request, category_id=None, category_title=None):
 
     return render_to_response(get_template_for_category(category_obj),
         {
+            'link': category_title,
             'category': category_obj,
             'articles': articles,
         })

@@ -6,9 +6,9 @@
 {% endblock %}
 {% block body %}
 <div class="page">
-{% include 'pc/_nav.html' %}
+{% include 'pc/_nav.html' with link="home" %}
 <div class="banner"></div>
-<div class="toutiao">
+<div class="toutiao" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
     <div class="look-all">
@@ -105,7 +105,7 @@
     </div>
   </div>
 </div>
-<div class="people student">
+<div class="people student" style="margin-top: 30px;">
   <div class="container">
     <div class="title"></div>
     <div class="look-all">

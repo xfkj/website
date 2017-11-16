@@ -6,7 +6,7 @@
         <img src="{% static "img/home/logo.png" %}" alt="">
       </a>
       <div class="float-right">
-        <a href="#" class="back-home">返回非凡首页</a>
+        <a href="/" class="back-home">非凡首页</a>
         <ul class="address">
           <li>
             <a href="#">杭州</a>
@@ -27,8 +27,8 @@
     <div class="nav-wrap">
       <div class="nav">
       <ul class="nav-first">
-        <li class="active">
-          <a href="#">课程分类</a>
+        <li class="{% if link == "home" %}active home-nav{% endif %}">
+          <a href="/">课程分类</a>
           <ul class="nav-second">
             <li>
               <a href="#">艺术生文化课</a>
@@ -109,18 +109,18 @@
             </li>
           </ul>
         </li>
-        <li>
-          <a href="#">校区介绍</a>
+        <li class="{% if link == "校区介绍" %}active {% endif %}">
+          <a href="{% url 'pc_category_by_title' '校区介绍' %}">校区介绍</a>
         </li>
-        <li>
-          <a href="#">关于非凡</a>
+        <li class="{% if link == "关于非凡" %}active {% endif %}">
+          <a href="{% url 'pc_article_by_title' '关于非凡' %}">关于非凡</a>
         </li>
-        <li>
-          <a href="#">非凡成绩</a>
+        <li class="{% if link == "非凡战绩" %}active {% endif %}">
+          <a href="{% url 'pc_category_by_title' '非凡战绩' %}">非凡战绩</a>
         </li>
-        <li class="teacher-power">
-          <a href="#">师资力量</a>
-          <ul class="nav-second">
+        <li class="teacher-power {% if link == "非凡名师" %}active {% endif %}">
+          <a href="{% url 'pc_category_by_title' '非凡名师' %}">非凡名师</a>
+          <ul class="nav-second" style="display: none;">
             <li>
               <a href="#">艺术生文化课</a>
             </li>
@@ -138,8 +138,8 @@
             </li>
           </ul>
         </li>
-        <li>
-          <a href="#">联系我们</a>
+        <li class="{% if link == "联系我们" %}active {% endif %}">
+          <a href="{% url 'pc_article_by_title' '联系我们' %}">联系我们</a>
         </li>
       </ul>
     </div>
