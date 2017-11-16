@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
-from core.models import Article, Category
+from core.models import Article, Category, Tag
+
 
 def home(request):
     data = {}
@@ -11,16 +12,16 @@ def home(request):
         data['categories'][cat.title] = articles
     return render_to_response('pc/home.html', data)
 
+
 def article(request, article_id=None, article_title=None):
     if article_id is not None:
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
         article_obj = get_object_or_404(Article, title=article_title)
-    return render_to_response(get_template_for_article(article_obj),
-        {
+    return render_to_response(
+        get_template_for_article(article_obj), {
             'article': article_obj
         })
-
 
 
 def category(request, category_id=None, category_title=None):
@@ -31,12 +32,16 @@ def category(request, category_id=None, category_title=None):
         category_obj = get_object_or_404(Category, title=category_title)
     articles = category_obj.article_set.all()
 
-    return render_to_response(get_template_for_category(category_obj),
-        {
+    tag_string = request.GET.get('tag', '')
+    print('tag'+tag_string)
+    if tag_string != '':
+        articles = articles.filter(tags__tag=tag_string)
+
+    return render_to_response(
+        get_template_for_category(category_obj), {
             'category': category_obj.title,
             'articles': articles,
         })
-
 
 
 def get_template_for_category(category):
@@ -56,10 +61,11 @@ def get_template_for_category(category):
 def get_template_for_article(article):
     return 'pc/article.html'
 
-def props(obj):  
-    pr = {}  
-    for name in dir(obj):  
-        value = getattr(obj, name)  
+
+def props(obj):
+    pr = {}
+    for name in dir(obj):
+        value = getattr(obj, name)
         if not name.startswith('__') and not callable(value):
-            pr[name] = value  
-    return pr  
+            pr[name] = value
+    return pr
