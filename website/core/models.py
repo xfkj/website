@@ -5,7 +5,7 @@ from django.utils import timezone as django_tz
 
 class Category(models.Model):
     title = models.CharField(max_length=30, verbose_name='分类')
-
+    cover = models.ImageField(verbose_name='封面', default=models.ImageField())
 
     def __str__(self):
         return self.title

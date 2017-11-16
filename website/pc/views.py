@@ -33,7 +33,7 @@ def category(request, category_id=None, category_title=None):
 
     return render_to_response(get_template_for_category(category_obj),
         {
-            'category': category_obj.title,
+            'category': category_obj,
             'articles': articles,
         })
 
