@@ -2,7 +2,7 @@
 <div class="header">
   <div class="container">
     <div class="top clear">
-      <a href="#" class="home float-left">
+      <a href="/" class="home float-left">
         <img src="{% static "img/home/logo.png" %}" alt="">
       </a>
       <div class="float-right">
@@ -120,24 +120,23 @@
           <ul class="nav-second" style="display: none;">
             <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=语文">语文</a>
-            </li>
-            <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=数学">数学</a>
-            </li>
-            <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=英语">英语</a>
             </li>
+         
             <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=政治">政治</a>
-            </li>
-            <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=历史">历史</a>
-            </li>
-            <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=地理">地理</a>
             </li>
+        
             <li>
               <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=物理">物理</a>
+              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=化学">化学</a>
+              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=生物">生物</a>
+            </li>
+            <li>
+                <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=通用技术">通用技术</a>
             </li>
           </ul>
         </li>
