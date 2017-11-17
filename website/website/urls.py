@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('m/core/', include('core.urls')),
+    path('core/', include('core.urls')),
     path('m/', include('mobile.urls')),
     path('', include('pc.urls')),
     path(r'^summernote/', include('django_summernote.urls')),
