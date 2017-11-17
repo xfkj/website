@@ -38,6 +38,7 @@ class Article(models.Model):
     desc = models.TextField(verbose_name='概要')
     cover = models.ImageField(verbose_name='封面')
     content = models.TextField(verbose_name='正文')
+    pc_content = models.TextField(verbose_name="pc端正文(如果和移动端不一样，可以录入在这里)", null=True, blank=True)
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE)
     promote = models.BooleanField(verbose_name='置于首页')
     weight = models.IntegerField(verbose_name='排序')
