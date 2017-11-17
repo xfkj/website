@@ -7,7 +7,7 @@
 {% block body %}
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
-<div class="banner" style="position: relative;">
+<div class="banner" style="position: relative;overflow: hidden;">
   {% for a in categories.pcbanner|slice:":1" %}
   <img src="{{a.cover.url}}" alt="非凡教育" draggable="false" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);height:100%;">
   {% endfor %}
