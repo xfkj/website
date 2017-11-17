@@ -95,7 +95,7 @@
       {% for a in categories.非凡战绩|slice:":4" %}
         <div class="item" style="background-image: url('{{ a.cover.url }}')">
           <div class="blur-container">
-            <p>{{a.title}}</p>
+            <a href="{% url 'pc_article' a.id %}">{{a.title}}</a>
           </div>
         </div>
       {% endfor %}
@@ -161,7 +161,7 @@
   <div class="container">
     <div class="title"></div>
     <div class="look-all">
-      <a href="{% url 'category_by_title' '优秀学员' %}">查看更多</a>
+      <a href="{% url 'pc_category_by_title' '优秀学员' %}">查看更多</a>
     </div>
     <div class="main people-main">
       <div class="swiper-button-prev"></div>
@@ -251,8 +251,6 @@
 {% endblock %}
 
 {% block foot %}
-<script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
-<script src="{% static "js/home/index.js" %}"></script>
 <script> (function () {
     var _53code=document.createElement("script");
     _53code.src = "https://tb.53kf.com/code/code/10157157/1";
