@@ -7,7 +7,58 @@
 {% block body %}
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
-<div class="banner"></div>
+<div class="banner">
+  <div class="container">
+    <div class="receive">
+      <div class="leadin">
+        <p>免费领取</p>
+        <p>价值 <span>688</span>元</p>
+        <p>课程资料礼包</p>
+        <p class="gift">「 高考王能抢分黄宝书+导读课 」</p>
+      </div>
+      <div class="receiveMain">
+        <form id="top-form" onsubmit="return false;">
+          <input type="hidden" name="aim" value="领取688元礼包">
+          <div>
+            <input type="text" name="name" required="required"
+                  placeholder="请输入你的姓名" data-label="姓名">
+          </div>
+
+          <div>
+            <input type="text" name="phone" required="required"
+                  placeholder="请输入你的电话" data-label="电话">
+          </div>
+
+          <div class="receiveBtn">
+            <button>立即领取</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sub-banner">
+  <div class="container">
+    <div class="web-width web-secondView">
+      <div class="main-div ">
+        <ul>
+          {% for a in categories.课程产品|slice:":3" %}
+          <li class="{% if forloop.counter == 1 %} first {% endif %}">
+            <a href="{% url 'pc_article' a.id %}">
+              <div class="imgTop" style="background-image: url('{{ a.cover.url }}'); background-size: cover;">
+                <div class="accordion-string accordion-string-block">
+                  <!-- <img class="accordion-img accordion-slide" src="img/banner_title01.png" height="96" width="96"/> -->
+                  <button class="btn">查看详情</button>
+                </div>
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="toutiao" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
@@ -15,7 +66,7 @@
       <a href="{% url 'pc_category_by_title' '非凡头条' %}">查看更多</a>
     </div>
     <div class="main">
-      {% for a in categories.非凡头条 %}
+      {% for a in categories.非凡头条|slice:":5" %}
       <div class="item" style="background-image: url('{{ a.cover.url }}')">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>
@@ -33,14 +84,14 @@
     </div>
   </div>
 </div>
-<div class="zhanji">
+<div class="zhanji" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
     <div class="look-all">
       <a href="{% url 'pc_category_by_title' '非凡战绩' %}">查看更多</a>
     </div>
     <div class="main">
-      {% for a in categories.非凡战绩 %}
+      {% for a in categories.非凡战绩|slice:":4" %}
         <div class="item" style="background-image: url('{{ a.cover.url }}')">
           <div class="blur-container">
             <p>{{a.title}}</p>
@@ -105,7 +156,7 @@
     </div>
   </div>
 </div>
-<div class="people student" style="margin-top: 30px;">
+<div class="people student" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
     <div class="look-all">
@@ -136,9 +187,75 @@
     </div>
   </div>
 </div>
+<div class="intro">
+  <div class="title"></div>
+  <div class="container">
+    <div class="campusIntroduction">
+      {% for a in categories.为什么选择非凡 %}
+        <li>
+          <div class="campusImg">
+            <img src="{{ a.cover.url }}"/>
+          </div>
+    
+          <div class="interval"></div>
+    
+          <div class="briefIntroduction">
+            <div class="title">{{a.title}}</div>
+    
+            <div class="content">
+              {{a.desc}}
+            </div>
+    
+            <div class="btn">
+              <a href="{% url 'pc_article' a.id %}">
+                <i></i>
+              </a>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="dock" id="dock">
+  <div></div>
+  <div class="dockMain">
+    <form id="dockForm">
+      <p>
+        <span>
+          联系电话: <br />
+          <small>400-050-9886</small>
+        </span>
+        <span class="introduction">
+            免费领取 价值688元 课程礼包
+        </span>
+
+        <span>
+          <input type="hidden" name="aim" value="领取688元礼包">
+          <input type="text" name="user_name" required="required"
+            placeholder="请输入你的姓名" data-label="姓名">
+
+          <input type="text" name="user_telephone" required="required"
+            placeholder="请输入你的电话" data-label="电话">
+        </span>
+
+        <span>
+          <button id="dockBtn" class="dockBtn">立即预约</button>
+        </span>
+      </p>
+    </form>
+  </div>
+</div>
 {% endblock %}
 
 {% block foot %}
 <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "js/home/index.js" %}"></script>
+<script> (function () {
+    var _53code=document.createElement("script");
+    _53code.src = "https://tb.53kf.com/code/code/10157157/1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(_53code, s);
+
+   })(); </script>
 {% endblock %}

@@ -41,6 +41,7 @@
 
   <!-- rem flexible -->
   <link rel="stylesheet" href="{% static "utils/normalize/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "utils/notie/notie.min.css" %}">
   <link rel="stylesheet" href="{% static "css/home/home.css" %}">  
   <script src="{% static "utils/jquery/jquery.min.js" %}"></script>
 
@@ -51,6 +52,17 @@
   {% block body %}{% endblock %}
   {% include 'pc/_footer.html' %}
   {% block foot %}{% endblock %}  
+  
+  <script src="{% static "utils/notie/notie.min.js" %}"></script>
   <script src="{% static "js/home/index.js" %}"></script>
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b470af1d5d17f34197615944d6e1f111";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
 </body>
 </html>
