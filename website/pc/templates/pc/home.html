@@ -61,14 +61,14 @@
     </div>
   </div>
 </div>
-<div class="toutiao" style="margin-top: 50px;">
+<div class="toutiao news" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
     <div class="look-all">
       <a href="{% url 'pc_category_by_title' '非凡头条' %}">查看更多</a>
     </div>
     <div class="main">
-      {% for a in categories.非凡头条|slice:":5" %}
+      {% for a in categories.非凡头条|slice:":6" %}
       <div class="item" style="background-image: url('{{ a.cover.url }}')">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>

@@ -7,3 +7,13 @@ input::-webkit-contacts-auto-fill-button {
   position: absolute;
   right: 0;
 }
+.page .toutiao.news .main {
+  height: auto !important;
+  flex-wrap: wrap !important;
+}
+.page .toutiao.news .main .item {
+  height: 310px;
+  margin-right: 20px !important;
+  margin-bottom: 20px !important;
+  flex: none !important;  
+}
