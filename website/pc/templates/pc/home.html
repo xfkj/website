@@ -68,7 +68,7 @@
       <a href="{% url 'pc_category_by_title' '非凡头条' %}">查看更多</a>
     </div>
     <div class="main">
-      {% for a in categories.非凡头条|slice:":6" %}
+      {% for a in categories.非凡头条|slice:":3" %}
       <div class="item" style="background-image: url('{{ a.cover.url }}')">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>
