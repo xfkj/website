@@ -40,6 +40,7 @@
                     <a href="{% url 'pc_article_by_title' '全国Ⅰ卷班' %}">Ⅰ卷班</a>
                     <a href="{% url 'pc_article_by_title' '全国Ⅱ卷班' %}">Ⅱ卷班</a>
                     <a href="{% url 'pc_article_by_title' '全国Ⅲ卷班' %}">Ⅲ卷班</a>
+                    <a class="head" href="{% url 'pc_article_by_title' '江苏班' %}">江苏班</a>
                   </div>
                 </li>
                 <li class="clear">
@@ -49,9 +50,6 @@
                     <a href="{% url 'pc_article_by_title' '浙江班联考冲刺营' %}">联考冲刺营</a>
                     <a href="{% url 'pc_article_by_title' '浙江班校考冲刺营' %}">校考冲刺营</a>
                   </div>
-                </li>
-                <li class="clear">
-                  <a class="head" href="{% url 'pc_article_by_title' '江苏班' %}">江苏班</a>
                 </li>
               </ul>
             </li>
@@ -65,7 +63,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">专业文化一课</a>
+              <a href="#">专业文化一体课</a>
               <i class="icon-right"></i>
               <ul class="nav-third">
                 <li>
@@ -110,7 +108,7 @@
           <a href="{% url 'pc_category_by_title' '校区介绍' %}">校区介绍</a>
         </li>
         <li class="{% if link == "关于非凡" %}active {% endif %}">
-          <a href="{% url 'pc_article_by_title' '关于非凡' %}">关于非凡</a>
+          <a href="{% url 'pc_category_by_title' '关于非凡' %}">关于非凡</a>
         </li>
         <li class="{% if link == "非凡战绩" %}active {% endif %}">
           <a href="{% url 'pc_category_by_title' '非凡战绩' %}">非凡战绩</a>
