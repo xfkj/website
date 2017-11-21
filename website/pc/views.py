@@ -51,6 +51,7 @@ def get_template_for_category(category):
     template_map = {
         '非凡名师': 'pc/people.html',
         '优秀学员': 'pc/people.html',
+        '非凡战绩': 'pc/people.html',
         '非凡头条': 'pc/information.html',
     }
 
