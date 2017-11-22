@@ -20,9 +20,9 @@
 
         {% for a in articles %}
             <li>
-                <div class="campusImg">
+                <a href="{% url 'pc_article' a.id %}" class="campusImg">
                     <img src="{{a.cover.url}}" alt="{{a.title}}">
-                </div>
+                </a>
             
                 <div class="interval"></div>
             
