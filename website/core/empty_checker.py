@@ -9,3 +9,7 @@ class EMPTYChecker(HTMLParser):
     def handle_data(self, data):
         if data.strip():
             self.is_empty = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'img':
+            self.is_empty = False
