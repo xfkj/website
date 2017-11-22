@@ -122,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = '/root/ffwebsite/static'
 
 QINIU_ACCESS_KEY = 'gBjr2wM3k0Nd9ZxnrkkzZSxt1PhxpTRckn939VRZ'
 QINIU_SECRET_KEY = '40jNMG0KBY7xNM-Th11Zc3g0gBgBRDKXw_qQbrax'
