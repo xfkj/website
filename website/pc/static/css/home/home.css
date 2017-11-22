@@ -22,3 +22,16 @@ input::-webkit-contacts-auto-fill-button {
   margin-left: auto;
   margin-right: auto;
 }
+
+* {
+  font-family: "Microsoft YaHei";
+}
+.page .look-all>a {
+  letter-spacing: 12px;
+  text-indent: 12px;
+  transition: all .3s;
+}
+
+.page .container:hover .look-all>a {
+  background-color: #ffd800;
+}
