@@ -192,7 +192,29 @@
 <div class="intro">
   <div class="title"></div>
   <div class="container">
-    <div class="campusIntroduction">
+    <div class="intro-wrap">
+      {% for a in categories.为什么选择非凡 %}
+        <a href="{% url 'pc_article' a.id %}" class="item">
+          <div class="intro-top">
+            <div class="default">
+              <i class="icon" style="background-image:url('{% static "img/home/about-feifan/" %}{{ forloop.counter0}}.png')"></i>
+              <h3 class="title">{{a.title}}</h3>
+            </div>
+            <div class="hover">
+              <img src="{{ a.cover.url }}" alt="">
+              <h3 class="title">{{a.title}}</h3>
+            </div>
+          </div>
+          <div class="intro-main">
+              {{a.desc}}
+          </div>
+          <div class="intro-footer">
+            <i class="right"></i>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <!-- <div class="campusIntroduction">
       {% for a in categories.关于非凡 %}
         <li>
           <div class="campusImg">
@@ -216,7 +238,7 @@
           </div>
         </li>
       {% endfor %}
-    </div>
+    </div> -->
   </div>
 </div>
 <div class="dock" id="dock">
