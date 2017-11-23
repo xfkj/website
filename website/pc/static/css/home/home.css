@@ -21,6 +21,10 @@ input::-webkit-contacts-auto-fill-button {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+}
+.footer .contact .icon-phone {
+  right: 170px;
 }
 
 * {
