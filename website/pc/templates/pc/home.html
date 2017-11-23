@@ -193,7 +193,7 @@
   <div class="title"></div>
   <div class="container">
     <div class="intro-wrap">
-      {% for a in categories.为什么选择非凡 %}
+      {% for a in categories.关于非凡 %}
         <a href="{% url 'pc_article' a.id %}" class="item">
           <div class="intro-top">
             <div class="default">
@@ -214,31 +214,6 @@
         </a>
       {% endfor %}
     </div>
-    <!-- <div class="campusIntroduction">
-      {% for a in categories.关于非凡 %}
-        <li>
-          <div class="campusImg">
-            <img src="{{ a.cover.url }}"/>
-          </div>
-    
-          <div class="interval"></div>
-    
-          <div class="briefIntroduction">
-            <div class="title">{{a.title}}</div>
-    
-            <div class="content">
-              {{a.desc}}
-            </div>
-    
-            <div class="btn">
-              <a href="{% url 'pc_article' a.id %}">
-                <i></i>
-              </a>
-            </div>
-          </div>
-        </li>
-      {% endfor %}
-    </div> -->
   </div>
 </div>
 <div class="dock" id="dock">
