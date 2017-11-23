@@ -162,3 +162,10 @@ input::-webkit-contacts-auto-fill-button {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.nav .nav-second>li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
