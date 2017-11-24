@@ -163,7 +163,7 @@ input::-webkit-contacts-auto-fill-button {
   transform: translateY(-50%);
 }
 
-.nav .nav-second>li a {
+.nav .nav-second>li>a {
   display: flex;
   align-items: center;
   height: 100%;
