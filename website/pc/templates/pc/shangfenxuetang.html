@@ -1,0 +1,61 @@
+{% extends 'pc/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/teachers/teachers.css" %}"> 
+
+{% endblock %}
+
+{% block body %}
+<div class="page">
+    {% include 'pc/_nav.html' %}
+</div>
+
+<div class="frontCover">
+    <img src="{{category.cover.url}}">
+</div>
+
+<div class="main">
+    <div class="centre">
+        <style>
+            .main .centre {
+                width: 1220px;
+                padding-left: 20px;
+            }
+            .main .centre .teacher {
+                margin-bottom: 110px;
+                width: 380px;
+                height: 238px;
+                margin-right: 20px;
+            }
+            .main .centre .teacher:nth-child(odd) {
+                margin-right: 20px;
+            }
+            .teacher {
+                position: relative;
+            }
+            .teacher .title {
+                position: absolute;
+                line-height: 40px;
+                bottom: -40px;
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                color: #666;
+                background-color: #eee;
+            }
+            .teacher>*:first-child {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        {% for a in articles %}
+        <div class="teacher">
+            {{a.content|safe}}
+            <p class="title">{{a.title}}</p>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

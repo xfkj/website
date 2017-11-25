@@ -53,6 +53,7 @@ def get_template_for_category(category):
         '优秀学员': 'pc/people.html',
         '非凡战绩': 'pc/people.html',
         '非凡头条': 'pc/information.html',
+        '上分学堂': 'pc/shangfenxuetang.html',
     }
 
     return cat_name in template_map and template_map[cat_name] or DEFAULT_TEMPLATE
