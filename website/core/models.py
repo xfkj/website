@@ -28,6 +28,7 @@ class Tag(models.Model):
 
 # Create your models here.
 class Article(models.Model):
+    area = models.CharField(max_length=50, verbose_name='地区', default="杭州")
     title = models.CharField(max_length=100, verbose_name='标题')
     tags = models.ManyToManyField(Tag, verbose_name='标签')
     desc = models.TextField(verbose_name='概要')
