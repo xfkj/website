@@ -38,6 +38,7 @@ class Article(models.Model):
     category = models.ForeignKey(
         Category, verbose_name='分类', on_delete=models.CASCADE)
     promote = models.BooleanField(verbose_name='置于首页')
+    is_recommend = models.BooleanField(verbose_name='设为推荐', default=False)
     weight = models.IntegerField(verbose_name='排序')
 
     def save(self,*args, **kwargs):

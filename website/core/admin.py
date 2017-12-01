@@ -25,10 +25,11 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title',
         'category',
         'promote',
+        'is_recommend',
         'weight',
     )
     list_display_links = ('title', )
-    list_editable = ('category', 'promote', 'weight')
+    list_editable = ('category', 'promote', 'is_recommend', 'weight')
     list_filter = ('category', 'promote', 'tags')
     readonly_fields = ('image_tag',)
 
