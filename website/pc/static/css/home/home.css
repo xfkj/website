@@ -28,7 +28,7 @@ input::-webkit-contacts-auto-fill-button {
 }
 
 * {
-  font-family: "Microsoft YaHei";
+  font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .page .look-all>a {
   letter-spacing: 12px;
