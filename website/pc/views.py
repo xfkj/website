@@ -14,6 +14,7 @@ def home(request):
 
 
 def article(request, article_id=None, article_title=None):
+    recommends = Article.objects.filter(is_recommend=True)
     if article_id is not None:
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
@@ -21,13 +22,9 @@ def article(request, article_id=None, article_title=None):
     return render_to_response(get_template_for_article(article_obj),
         {
             'link': article_title,
-            'article': article_obj
+            'article': article_obj,
+            'recommends': recommends
         })
-
-def news(request, id):
-    article = get_object_or_404(Article, pk=id)
-    recommends = Article.objects.filter(is_recommend=True)
-    return render_to_response('pc/news.html', {'article': article, 'recommends': recommends})
 
 
 def category(request, category_id=None, category_title=None):
@@ -66,12 +63,3 @@ def get_template_for_category(category):
 
 def get_template_for_article(article):
     return 'pc/article.html'
-
-
-def props(obj):
-    pr = {}
-    for name in dir(obj):
-        value = getattr(obj, name)
-        if not name.startswith('__') and not callable(value):
-            pr[name] = value
-    return pr

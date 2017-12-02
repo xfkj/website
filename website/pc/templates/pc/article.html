@@ -23,6 +23,61 @@
     {% else %}
       {{article.content | safe}}
     {% endif %}
+    <div class="recomend">
+      <h2>推荐阅读</h2>
+      <ul>
+      {% for a in recommends|slice:":5" %}
+        <li>
+          <a class="item" href="{% url 'pc_article' a.id %}">{{ a.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <style>
+      .recomend {
+        margin-top: 60px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+      }
+      .recomend>h2 {
+        font-size: 18px;
+        line-height: 25px;
+        color: #808080;
+        font-weight: normal;
+        margin-bottom: 30px;
+      }
+      .recomend .item {
+        color: #333;
+        font-size: 17px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;        
+      }
+      .recomend .item:before {
+        content: '';
+        display: inline-block;
+        width: .9em;
+        height: .9em;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .14);
+        margin-right: 16px;
+      }
+      .recomend .item:hover {
+        color: #49a9ee;
+        text-decoration: underline;
+      }
+      .recomend .item:hover:before {
+        border-color: #49a9ee;
+        background-color: #49a9ee;
+        background-clip: content-box;
+        box-sizing: border-box;
+        padding: .2em;
+      }
+    </style>
   </div>
 </div>
 {% endblock %}
