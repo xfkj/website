@@ -24,6 +24,11 @@ def article(request, article_id=None, article_title=None):
             'article': article_obj
         })
 
+def news(request, id):
+    article = get_object_or_404(Article, pk=id)
+    recommends = Article.objects.filter(is_recommend=True)
+    return render_to_response('pc/news.html', {'article': article, 'recommends': recommends})
+
 
 def category(request, category_id=None, category_title=None):
 
