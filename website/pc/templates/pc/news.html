@@ -26,12 +26,12 @@
     <div class="recomend">
       <h2>头条推荐</h2>
       {% for a in recommends|slice:":4" %}
-        <div class="item">
+        <a class="item" href="{% url 'pc_article' a.id %}">
           <div class="img">
             <img src="{{a.cover.url}}" alt="">
           </div>
           <div class="title">{{ a.title }}</div>
-        </div>
+        </a>
       {% endfor %}
       <div style="clear: both;"></div> 
     </div>
@@ -56,6 +56,8 @@
         height: 200px;
         float: left;
         transition: all .5s;
+        display: block;
+        color: inherit;
       }
       .recomend .item:hover {
         box-shadow: 0 4px 20px 4px rgba(0, 0, 0, .08);
