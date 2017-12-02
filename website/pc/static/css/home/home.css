@@ -160,6 +160,7 @@ input::-webkit-contacts-auto-fill-button {
   position: absolute;
   z-index: -1;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
 }
 
@@ -168,4 +169,11 @@ input::-webkit-contacts-auto-fill-button {
   align-items: center;
   height: 100%;
   width: 100%;
+}
+.nav .nav-second>li:hover>a {
+  color: #282727;
+}
+
+.nav .nav-second {
+  left: 0;
 }
