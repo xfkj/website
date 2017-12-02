@@ -49,6 +49,15 @@
   <title>
     非凡教育官网—艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考教育培训
   </title>
+  <script src="https://cdn.bootcss.com/mobile-detect/1.3.7/mobile-detect.min.js"></script>
+  <script>
+    (function() {
+      if (new MobileDetect(window.navigator.userAgent).mobile()) {
+        const origin = location.origin;
+        location.href = origin + '/m';
+      }
+    })();
+  </script>
   {% block head %}{% endblock %}
 </head>
 <body>
