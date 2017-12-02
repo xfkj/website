@@ -170,6 +170,9 @@ input::-webkit-contacts-auto-fill-button {
   height: 100%;
   width: 100%;
 }
+.nav .nav-second>li:hover>a {
+  color: #282727;
+}
 
 .nav .nav-second {
   left: 0;
