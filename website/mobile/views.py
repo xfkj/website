@@ -45,6 +45,7 @@ def category(request, category_id=None, category_title=None):
             'tags': tags,
             'articles': articles,
             'top_article': article_obj,
+            'id': article_id
         })
 
 
