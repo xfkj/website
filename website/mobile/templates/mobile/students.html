@@ -15,7 +15,7 @@
   <div class="item">
       <a href="{% url 'article' article.id %}">
         <div class="img">
-          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload"> alt="">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{article.title}}" class="lazyload">
         </div>
         <div class="detail">
           <p class="name">{{ article.title }}</p>
