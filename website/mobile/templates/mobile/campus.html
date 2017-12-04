@@ -55,6 +55,7 @@
             slidesPerView: 'auto'
         });
         var currentIndex = $('#{{id}}').index()
+        mySwiper.slideTo(currentIndex)
         navSwiper.slideTo(currentIndex)
         mySwiper.on('tap', function (swiper, e) {
 
