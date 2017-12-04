@@ -69,10 +69,10 @@
     </div>
     <div class="main">
       {% for a in categories.非凡头条|slice:":3" %}
-      <div class="item" style="background-image: url('{{ a.cover.url }}')">
+      <a class="item" style="background-image: url('{{ a.cover.url }}')" href="{% url 'pc_article' a.id %}">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>
-            <a href="{% url 'pc_article' a.id %}">{{a.title}}</a>
+            <span>{{a.title}}</span>
           </strong>
           <p></p>
           <style>
@@ -81,7 +81,7 @@
             }
           </style>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </div>
@@ -94,11 +94,11 @@
     </div>
     <div class="main">
       {% for a in categories.非凡战绩|slice:":4" %}
-        <div class="item" style="background-image: url('{{ a.cover.url }}')">
+        <a class="item" style="background-image: url('{{ a.cover.url }}')" href="{% url 'pc_article' a.id %}">
           <div class="blur-container">
-            <a href="{% url 'pc_article' a.id %}">{{a.title}}</a>
+            <span>{{a.title}}</span>
           </div>
-        </div>
+        </a>
       {% endfor %}
     </div>
   </div>
@@ -142,10 +142,10 @@
     </div>
     <div class="main">
       {% for a in categories.校区介绍 %}
-      <div class="item" style="background-image: url('{{ a.cover.url }}')">
+      <a class="item" style="background-image: url('{{ a.cover.url }}')" href="{% url 'pc_article' a.id %}">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>
-            <a href="{% url 'pc_article' a.id %}">{{ a.title }}</a>
+            <span>{{ a.title }}</span>
           </strong>
           <style>
             .sub{{forloop.counter}}:before {
@@ -153,7 +153,7 @@
             }
           </style>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </div>
