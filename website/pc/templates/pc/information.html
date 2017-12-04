@@ -17,6 +17,44 @@
 
 <div class="main">
     <div class="centre">
+      <style>
+        .main .centre .information {
+          height: 120px;
+          margin-bottom: 24px;
+        }
+        .main .centre .information:hover .btn button {
+          background-color: #FFE100 !important;
+          color: #2C2C2C !important;
+        }
+        .main .centre .information .information-img {
+          position: relative;
+          width: 149px;
+          overflow: hidden;
+        }
+        .main .centre .information .information-img>img {
+          width: auto;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .main .centre .information .content .information-title {
+          font-size: 18px;
+          color: #333;
+          margin-top: -4px;
+        }
+        .main .centre .information .content .btn {
+          margin-top: 16px;
+        }
+        .main .centre .information .content .btn>a {
+          cursor: pointer;
+        }
+        .main .centre .information .content .btn>a button {
+          font-size: 14px;
+          background-color: transparent;
+          transition: background-color .5s;
+          color: #b2b2b2;
+        }
+      </style>
       {% for a in articles %}
       <div class="information">
           <div class="information-img">
@@ -26,12 +64,6 @@
           <div class="content">
             <div class="information-title">
               <p>{{a.title}}</p>
-            </div>
-    
-            <div class="summary">
-              <p>
-                {{a.desc}}
-              </p>
             </div>
     
             <div class="btn">
