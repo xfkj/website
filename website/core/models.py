@@ -2,13 +2,19 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils import timezone as django_tz
 from .empty_checker import EMPTYChecker
+from uuslug import slugify
 
 class Category(models.Model):
     title = models.CharField(max_length=30, verbose_name='分类')
+    uri = models.CharField(max_length=200, blank=True)
     cover = models.ImageField(verbose_name='封面', default=models.ImageField())
 
     def __str__(self):
         return self.title
+
+    def save(self,*args, **kwargs):
+        self.uri = slugify(self.title)
+        super(Category, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = '分类'
@@ -30,6 +36,7 @@ class Tag(models.Model):
 class Article(models.Model):
     area = models.CharField(max_length=50, verbose_name='地区', default="杭州")
     title = models.CharField(max_length=100, verbose_name='标题')
+    uri = models.CharField(max_length=200, blank=True)
     keyword = models.CharField(max_length=200, verbose_name='关键词',blank=True)
     tags = models.ManyToManyField(Tag, verbose_name='标签')
     desc = models.TextField(verbose_name='概要')
@@ -45,6 +52,7 @@ class Article(models.Model):
 
     def save(self,*args, **kwargs):
         self.pc_content = self.__filterEmptyHTML(self.pc_content)
+        self.uri = slugify(self.title)
         super(Article, self).save(*args, **kwargs)
 
     def __filterEmptyHTML(self, input):

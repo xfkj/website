@@ -37,18 +37,18 @@
                 <li class="clear">
                   <div class="head">全国班</div>
                   <div class="main">
-                    <a href="{% url 'pc_article_by_title' '全国Ⅰ卷班' %}">Ⅰ卷班</a>
-                    <a href="{% url 'pc_article_by_title' '全国Ⅱ卷班' %}">Ⅱ卷班</a>
-                    <a href="{% url 'pc_article_by_title' '全国Ⅲ卷班' %}">Ⅲ卷班</a>
-                    <a href="{% url 'pc_article_by_title' '江苏班' %}">江苏班</a>
+                    <a href="{% url 'pc_article_by_uri' 'quan-guo-ijuan-ban' %}">Ⅰ卷班</a>
+                    <a href="{% url 'pc_article_by_uri' 'quan-guo-iijuan-ban' %}">Ⅱ卷班</a>
+                    <a href="{% url 'pc_article_by_uri' 'quan-guo-iiijuan-ban' %}">Ⅲ卷班</a>
+                    <a href="{% url 'pc_article_by_uri' 'jiang-su-ban' %}">江苏班</a>
                   </div>
                 </li>
                 <li class="clear">
                   <div class="head">浙江班</div>
                   <div class="main">
-                    <a href="{% url 'pc_article_by_title' '浙江班选考冲刺营' %}">选考冲刺营</a>
-                    <a href="{% url 'pc_article_by_title' '浙江班联考冲刺营' %}">联考冲刺营</a>
-                    <a href="{% url 'pc_article_by_title' '浙江班校考冲刺营' %}">校考冲刺营</a>
+                    <a href="{% url 'pc_article_by_uri' 'zhe-jiang-ban-xuan-kao-chong-ci-ying' %}">选考冲刺营</a>
+                    <a href="{% url 'pc_article_by_uri' 'zhe-jiang-ban-lian-kao-chong-ci-ying' %}">联考冲刺营</a>
+                    <a href="{% url 'pc_article_by_uri' 'zhe-jiang-ban-xiao-kao-chong-ci-ying' %}">校考冲刺营</a>
                   </div>
                 </li>
               </ul>
@@ -65,7 +65,7 @@
               -->
             </li>
             <li>
-              <a href="{% url 'pc_article_by_title' '专业文化一体解决方案' %}">专业文化一体课</a>
+              <a href="{% url 'pc_article_by_uri' 'zhuan-ye-wen-hua-yi-ti-ke' %}">专业文化一体课</a>
               <i class="icon-right"></i>
               <!--
               <ul class="nav-third">
@@ -81,22 +81,22 @@
               <ul class="nav-third">
                 <li>
                   <div>
-                      <a href="{% url 'pc_article_by_title' '美院附中简介' %}" style="margin-right: 8px">简介</a>
-                      <a href="{% url 'pc_article_by_title' '美院附中成绩' %}" style="margin-right: 8px">成绩</a>
-                      <a href="{% url 'pc_article_by_title' '美院附中教学计划' %}" style="margin-right: 8px">教学计划</a>
-                      <a href="{% url 'pc_article_by_title' '美院附中优秀学员' %}" >优秀学员</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-jian-jie' %}" style="margin-right: 8px">简介</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-cheng-ji' %}" style="margin-right: 8px">成绩</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-jiao-xue-ji-hua' %}" style="margin-right: 8px">教学计划</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-you-xiu-xue-yuan' %}" >优秀学员</a>
                   </div>
                   <div style="margin-top: 16px">
-                      <a href="{% url 'pc_article_by_title' '美院附中师资' %}" style="margin-right: 8px">师资</a>
-                      <a href="{% url 'pc_article_by_title' '美院附中咨询' %}" style="margin-right: 8px">咨询</a>            
-                      <a href="{% url 'pc_article_by_title' '美院附中师生作品' %}" style="margin-right: 8px">师生作品</a>
-                      <a href="{% url 'pc_article_by_title' '美院附中优惠计划' %}">优惠计划</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-shi-zi' %}" style="margin-right: 8px">师资</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-zi-xun' %}" style="margin-right: 8px">咨询</a>            
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-shi-sheng-zuo-pin' %}" style="margin-right: 8px">师生作品</a>
+                      <a href="{% url 'pc_article_by_uri' 'mei-yuan-fu-zhong-you-hui-ji-hua' %}">优惠计划</a>
                   </div>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="{% url 'pc_category_by_title' '上分学堂' %}">上分学堂</a>
+              <a href="{% url 'pc_category_by_uri' 'shang-fen-xue-tang' %}">上分学堂</a>
               <i class="icon-right"></i>
               <!--
               <ul class="nav-third">
@@ -109,44 +109,44 @@
           </ul>
         </li>
         <li class="{% if link == "校区介绍" %}active {% endif %}">
-          <a href="{% url 'pc_category_by_title' '校区介绍' %}">校区介绍</a>
+          <a href="{% url 'pc_category_by_uri' 'xiao-qu-jie-shao' %}">校区介绍</a>
         </li>
         <li class="{% if link == "关于非凡" %}active {% endif %}">
-          <a href="{% url 'pc_category_by_title' '关于非凡' %}">关于非凡</a>
+          <a href="{% url 'pc_category_by_uri' 'guan-yu-fei-fan' %}">关于非凡</a>
         </li>
         <li class="{% if link == "非凡战绩" %}active {% endif %}">
-          <a href="{% url 'pc_category_by_title' '非凡战绩' %}">非凡战绩</a>
+          <a href="{% url 'pc_category_by_uri' 'fei-fan-zhan-ji' %}">非凡战绩</a>
         </li>
         <li class="{% if link == "非凡头条" %}active {% endif %}">
-          <a href="{% url 'pc_category_by_title' '非凡头条' %}">非凡头条</a>
+          <a href="{% url 'pc_category_by_uri' 'fei-fan-tou-tiao' %}">非凡头条</a>
         </li>
         <li class="teacher-power {% if link == "非凡名师" %}active {% endif %}">
-          <a href="{% url 'pc_category_by_title' '非凡名师' %}">非凡名师</a>
+          <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}">非凡名师</a>
           <ul class="nav-second" style="display: none;">
             <li>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=语文">语文</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=数学">数学</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=英语">英语</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=语文">语文</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=数学">数学</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=英语">英语</a>
             </li>
          
             <li>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=政治">政治</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=历史">历史</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=地理">地理</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=政治">政治</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=历史">历史</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=地理">地理</a>
             </li>
         
             <li>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=物理">物理</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=化学">化学</a>
-              <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=生物">生物</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=物理">物理</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=化学">化学</a>
+              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=生物">生物</a>
             </li>
             <li>
-                <a href="{% url 'pc_category_by_title' '非凡名师' %}?tag=技术">技术</a>
+                <a href="{% url 'pc_category_by_uri' '非凡名师' %}?tag=技术">技术</a>
             </li>
           </ul>
         </li>
         <li class="{% if link == "联系我们" %}active {% endif %}">
-          <a href="{% url 'pc_article_by_title' '联系我们' %}">联系我们</a>
+          <a href="{% url 'pc_article_by_uri' 'lian-xi-wo-men' %}">联系我们</a>
         </li>
       </ul>
     </div>

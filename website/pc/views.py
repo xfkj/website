@@ -13,12 +13,12 @@ def home(request):
     return render_to_response('pc/home.html', data)
 
 
-def article(request, article_id=None, article_title=None):
+def article(request, article_id=None, article_uri=None):
     recommends = Article.objects.filter(is_recommend=True)
     if article_id is not None:
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
-        article_obj = get_object_or_404(Article, title=article_title)
+        article_obj = get_object_or_404(Article, uri=article_uri)
     return render_to_response(get_template_for_article(article_obj),
         {
             'article': article_obj,
@@ -26,12 +26,12 @@ def article(request, article_id=None, article_title=None):
         })
 
 
-def category(request, category_id=None, category_title=None):
+def category(request, category_id=None, category_uri=None):
 
     if category_id is not None:
         category_obj = get_object_or_404(Category, pk=category_id)
     else:
-        category_obj = get_object_or_404(Category, title=category_title)
+        category_obj = get_object_or_404(Category, uri=category_uri)
     articles = category_obj.article_set.all()
 
     tag_string = request.GET.get('tag', '')
@@ -40,7 +40,6 @@ def category(request, category_id=None, category_title=None):
 
     return render_to_response(
         get_template_for_category(category_obj), {
-            'link': category_title,
             'category': category_obj,
             'articles': articles,
         })
