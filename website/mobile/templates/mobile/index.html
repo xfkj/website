@@ -8,6 +8,29 @@
 
 {% block body %}
 <div class="header">
+  <div class="player-video">
+    <div class="open">
+    </div>
+    <div class="player">
+      <div class="mask"></div>
+      <div class="close"></div>
+      <div class="video">
+        <video controls="" preload="none" poster="{% static "mobile/img/play/play_poster.jpeg" %}">
+          <source src="http://ffwebsite.ffjy.org/%E6%88%90%E7%89%871080P.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <style>
+    .header { position: relative; z-index: 15; }
+    .player-video { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 1; }
+    .player-video .open { background: url("{% static "mobile/img/play/icon_play.png" %}") no-repeat; background-size: 1.15rem 1.15rem; position: absolute; width: 1.15rem; height: 1.15rem; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    .player-video .player { transition: transform .3s; transform: translateX(-100%); z-index: 15; position: fixed; left: 0; right: 0; top: 0; bottom: 0; }
+    .player-video .player.active { transform: translateX(0); }
+    .player-video .player .mask { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0, 0, 0, .76); }
+    .player-video .player .close { background: url("{% static "mobile/img/play/icon_play_close.png" %}") no-repeat; background-size: .59rem .59rem; position: absolute; width: .59rem; height: .59rem; right: .27rem; top: .27rem; }
+    .player-video .player .video { position: absolute; z-index: 1; width: 100%; top: 30%; }
+  </style>
   <div class="menu">
     <ul>
       <li>
@@ -206,4 +229,15 @@
 {% include "mobile/_nav.html" with active_link='home' %}
 <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "mobile/js/home/index.js" %}"></script>
+<script>
+  ;(function($) {
+    var player = $('.player-video');
+    player.find('.open').on('click', function() {
+      player.find('.player').addClass('active')
+    });
+    player.find('.close').on('click', function() {
+      player.find('.player').removeClass('active')
+    })
+  })(Zepto);
+</script>
 {% endblock %}
