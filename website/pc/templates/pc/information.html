@@ -1,6 +1,12 @@
 {% extends 'pc/base.html' %}
 {% load staticfiles %}
 
+{% block keyword %} {{category.title}} {% endblock %}
+
+{% block description %} {{category.title}} {% endblock %}
+
+{% block title %} {{category.title}} | {% endblock %}
+
 {% block head %}
 <link rel="stylesheet" href="{% static "css/information/information.css" %}"> 
 
