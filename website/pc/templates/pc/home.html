@@ -277,6 +277,7 @@
       });
       $('.play-video').find('.close').on('click', function() {
         $('.play-video').slideUp(500);
+        $('.play-video').find('video')[0].pause(); // pause video
       })
     })
   })(jQuery);

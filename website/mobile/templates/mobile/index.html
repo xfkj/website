@@ -237,6 +237,7 @@
     });
     player.find('.close').on('click', function() {
       player.find('.player').removeClass('active')
+      player.find('video')[0].pause();
     })
   })(Zepto);
 </script>
