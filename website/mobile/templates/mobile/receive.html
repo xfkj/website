@@ -11,7 +11,7 @@
     <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
   </div>
   <div class="signUp">
-      <form class="form" id="lingqu">
+      <form class="form" id="lingqu" onsubmit="return false">
           <div class="form-control name">
               <label for="name"></label>
               <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
