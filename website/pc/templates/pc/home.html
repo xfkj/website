@@ -12,6 +12,21 @@
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
 <div class="banner" style="position: relative;overflow: hidden;">
+  <div class="video-player">
+    <div class="player"></div>
+    <div class="play-video">
+        <div class="mask"></div>
+        <div class="close"></div>
+        <div class="video">
+            <video controls="" preload="none" poster="{% static "img/play/play_poster.jpeg" %}">
+              <source src="http://ffwebsite.ffjy.org/%E6%88%90%E7%89%871080P.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+  </div>
+  <style>
+    .video-player .player{width:86px;height:86px;background:url("{% static 'img/play/icon_play.png' %}") no-repeat;background-size:86px 86px;position:absolute;left:50%;top:50%;margin-top:-43px;margin-left:-43px;z-index:1;cursor:pointer}.play-video{position:fixed;z-index:99999;left:0;top:0;right:0;bottom:0;display:none}.play-video .mask{width:100%;height:100%;background:rgba(0, 0, 0, .76)}.play-video .video{position:absolute;float:left;top:50%;left:50%;transform:translate(-50%, -50%);box-shadow:0 4px 12px 0 rgba(0, 0, 0, 1)}.play-video .video>video{max-width:100%;max-height:100%;margin:0;min-width:600px;user-select:none;-webkit-user-select:none}.play-video .close{width:44px;height:44px;background:url("{% static 'img/play/icon_play_close.png' %}") no-repeat;background-size:44px 44px;position:absolute;right:20px;top:20px}
+  </style>
   {% for a in categories.pcbanner|slice:":1" %}
   <img src="{{a.cover.url}}" alt="非凡教育" draggable="false" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);height:100%;">
   {% endfor %}
@@ -258,6 +273,18 @@
 {% endblock %}
 
 {% block foot %}
+<script>
+  ;(function($) {
+    $(function() {
+      $('.player').on('click', function() {
+        $('.play-video').slideDown(500);
+      });
+      $('.play-video').find('.close').on('click', function() {
+        $('.play-video').slideUp(500);
+      })
+    })
+  })(jQuery);
+</script>
 <script> (function () {
     var _53code=document.createElement("script");
     _53code.src = "https://tb.53kf.com/code/code/10157157/1";
