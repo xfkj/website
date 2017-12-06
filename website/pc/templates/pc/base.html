@@ -38,7 +38,8 @@
   <!-- rem flexible -->
   <link rel="stylesheet" href="{% static "utils/normalize/normalize.css" %}">
   <link rel="stylesheet" href="{% static "utils/notie/notie.min.css" %}">
-  <link rel="stylesheet" href="{% static "css/home/home.css" %}">  
+  <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/home/home.css" %}">
   <script src="{% static "utils/jquery/jquery.min.js" %}"></script>
   <meta name="description" content="2015年高考非凡艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考创造校史最好成绩,全校平均分超过艺术本科线52.9分.全校本科过线率81.06%,小牛班（重点班）1/5学生总分超过500分,全校1/8的学生总分超过本科线100分以上,12位学生总分超过500分,120位学生总分超过400分!{% block description %}{% endblock %}">
   <meta name="keywords" content="艺艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考,{% block keyword %}{% endblock %}">
@@ -59,17 +60,16 @@
 <body>
   {% block body %}{% endblock %}
   {% include 'pc/_footer.html' %}
-  {% block foot %}{% endblock %}
-  
   <script src="{% static "utils/notie/notie.min.js" %}"></script>
-  <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>  
+  <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
   <script src="{% static "js/home/index.js" %}"></script>
+  {% block foot %}{% endblock %}
   <script>
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?b470af1d5d17f34197615944d6e1f111";
-        var s = document.getElementsByTagName("script")[0]; 
+        var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();
       </script>
