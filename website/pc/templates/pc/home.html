@@ -1,7 +1,11 @@
 {% extends 'pc/base.html' %}
 {% load staticfiles %}
 
-{% block title %}首页-{% endblock %}
+{% block keyword %} {{seo.keyword}} {% endblock %}
+
+{% block description %} {{seo.description}} {% endblock %}
+
+{% block title %}{{seo.title}}-{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
@@ -61,7 +65,7 @@
     <div class="web-width web-secondView">
       <div class="main-div ">
         <ul>
-          {% for a in categories.课程产品|slice:":3" %}
+          {% for a in categories.课程产品 %}
           <li class="{% if forloop.counter == 1 %} first {% endif %}">
             <a href="{% url 'pc_article' a.id %}">
               <div class="imgTop" style="background-image: url('{{ a.cover.url }}'); background-size: cover;">
@@ -85,7 +89,7 @@
       <a href="{% url 'pc_category_by_uri' 'fei-fan-tou-tiao' %}">查看更多</a>
     </div>
     <div class="main">
-      {% for a in categories.非凡头条|slice:":3" %}
+      {% for a in categories.非凡头条 %}
       <a class="item" style="background-image: url('{{ a.cover.url }}')" href="{% url 'pc_article' a.id %}">
         <div class="blur-container act-item-cover sub{{forloop.counter}}">
           <strong>

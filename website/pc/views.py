@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
-from core.models import Article, Category, Tag
+from core.models import Article, Category, Tag, Seo
 
 
 def home(request):
@@ -10,6 +10,7 @@ def home(request):
     for cat in categories:
         articles = cat.article_set.filter(promote=True)
         data['categories'][cat.title] = articles
+    data['seo'] = Seo.objects.all()[0]
     return render_to_response('pc/home.html', data)
 
 

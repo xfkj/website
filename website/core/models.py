@@ -92,3 +92,15 @@ class VisitorRecord(models.Model):
     class Meta:
         verbose_name = '访客'
         verbose_name_plural = '访客'
+
+class Seo(models.Model):
+    title = models.CharField(max_length=300, verbose_name='首页标题')
+    keyword = models.CharField(max_length=300, verbose_name='首页keyword')
+    description = models.CharField(max_length=500, verbose_name='首页description')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'SEO'
+        verbose_name_plural = 'SEO'

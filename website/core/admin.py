@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from .models import Article, VisitorRecord, Category, Tag
+from .models import Article, VisitorRecord, Category, Tag, Seo
 from django_summernote.widgets import SummernoteWidget
 
 
@@ -54,3 +54,8 @@ class VisitorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(VisitorRecord, VisitorAdmin)
+
+class SeoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'keyword', 'description')
+
+admin.site.register(Seo, SeoAdmin)
