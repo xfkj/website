@@ -35,7 +35,7 @@
     <ul>
       <li>
         <a href="{% url 'category_by_title' '高考冲刺' %}">
-          <i class="icon gkcj"></i>
+          <i class="icon gkcj hot"></i>
           <p>高考冲刺</p>
         </a>
       </li>
@@ -47,7 +47,7 @@
       </li>
       <li>
         <a href="{% url 'article_by_title' '美院附中' %}">
-          <i class="icon myfz"></i>
+          <i class="icon myfz hot"></i>
           <p>美院附中</p>
         </a>
       </li>
@@ -83,6 +83,22 @@
         </a>
       </li>
     </ul>
+    <style>
+      .header .menu ul li .icon {
+        position: relative;
+      }
+      .header .menu ul li .icon.hot:after {
+        position: absolute;
+        content: '';
+        width: .48rem;
+        height: .48rem;
+        background: url("{% static "mobile/img/home/hot.png" %}") no-repeat;
+        background-size: .48rem .48rem;
+        right: 0;
+        top: 0;
+        transform: translate(35%, -30%);
+      }
+    </style>
   </div>
 </div>
 <div class="main">
