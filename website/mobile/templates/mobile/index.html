@@ -146,7 +146,7 @@
   <!-- 课程产品 -->
   <div class="banner">
     <ul>
-      {% for article in categories.课程产品|slice:":3" %}
+      {% for article in categories.课程产品 %}
       <li>
         <a href="{% url 'article' article.id %}">
           <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
