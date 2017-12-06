@@ -94,6 +94,7 @@ class VisitorRecord(models.Model):
         verbose_name_plural = '访客'
 
 class Seo(models.Model):
+    site_name = models.CharField(max_length=300, verbose_name='网站名称',default='非凡教育')
     title = models.CharField(max_length=300, verbose_name='首页标题')
     keyword = models.CharField(max_length=300, verbose_name='首页keyword')
     description = models.CharField(max_length=500, verbose_name='首页description')

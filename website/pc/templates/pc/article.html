@@ -5,7 +5,7 @@
 
 {% block description %} {{article.desc}} {% endblock %}
 
-{% block title %}{{article.title}}-{% if article.category.title != '普通文章' %}{{article.category.title}}-{% endif %}{% endblock %}
+{% block title %}{{article.title}}{% if article.category.title != '普通文章' %}-{{article.category.title}}{% endif %}-{{site_name}}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "css/articleDetails/articleDetails.css" %}">  

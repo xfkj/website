@@ -56,6 +56,6 @@ class VisitorAdmin(admin.ModelAdmin):
 admin.site.register(VisitorRecord, VisitorAdmin)
 
 class SeoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'keyword', 'description')
+    list_display = ('site_name', 'title', 'keyword', 'description')
 
 admin.site.register(Seo, SeoAdmin)

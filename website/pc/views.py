@@ -10,7 +10,7 @@ def home(request):
     for cat in categories:
         articles = cat.article_set.filter(promote=True)
         data['categories'][cat.title] = articles
-    data['seo'] = Seo.objects.all()[0]
+    data['seo'] = Seo.objects.all()[0] or {}
     return render_to_response('pc/home.html', data)
 
 
@@ -26,6 +26,7 @@ def article(request, article_id=None, article_uri=None):
         title = article_obj.category.title
     return render_to_response(get_template_for_article(article_obj),
         {
+            'site_name': get_site_name(),
             'title': title,
             'article': article_obj,
             'recommends': recommends
@@ -47,6 +48,7 @@ def category(request, category_id=None, category_uri=None):
 
     return render_to_response(
         get_template_for_category(category_obj), {
+            'site_name': get_site_name(),
             'tag': tag_string,
             'tags': tags,
             'category': category_obj,
@@ -73,3 +75,8 @@ def get_template_for_article(article):
 
 def extract_tags(articles):
     return list(set([article.tags.all()[0] for article in articles]))
+
+def get_site_name():
+    seos = Seo.objects.all()
+    seo = seos[0]
+    return seo.site_name or ''
