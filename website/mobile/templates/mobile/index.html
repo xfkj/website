@@ -84,8 +84,12 @@
       </li>
     </ul>
     <style>
+      .header .menu {
+        z-index: 100;
+      }
       .header .menu ul li .icon {
         position: relative;
+        border-radius: 50%;
       }
       .header .menu ul li .icon.hot:after {
         position: absolute;
@@ -134,6 +138,18 @@
           <div class="img-wrap">
             <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
           </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- 课程产品 -->
+  <div class="banner">
+    <ul>
+      {% for article in categories.课程产品|slice:":3" %}
+      <li>
+        <a href="{% url 'article' article.id %}">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
         </a>
       </li>
       {% endfor %}
