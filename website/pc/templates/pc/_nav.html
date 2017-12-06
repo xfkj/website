@@ -122,28 +122,6 @@
         </li>
         <li class="teacher-power {% if link == "非凡名师" %}active {% endif %}">
           <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}">非凡名师</a>
-          <ul class="nav-second" style="display: none;">
-            <li>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=语文">语文</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=数学">数学</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=英语">英语</a>
-            </li>
-         
-            <li>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=政治">政治</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=历史">历史</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=地理">地理</a>
-            </li>
-        
-            <li>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=物理">物理</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=化学">化学</a>
-              <a href="{% url 'pc_category_by_uri' 'fei-fan-ming-shi' %}?tag=生物">生物</a>
-            </li>
-            <li>
-                <a href="{% url 'pc_category_by_uri' '非凡名师' %}?tag=技术">技术</a>
-            </li>
-          </ul>
         </li>
         <li class="{% if link == "联系我们" %}active {% endif %}">
           <a href="{% url 'pc_article_by_uri' 'lian-xi-wo-men' %}">联系我们</a>

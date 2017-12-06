@@ -34,12 +34,15 @@ def category(request, category_id=None, category_uri=None):
         category_obj = get_object_or_404(Category, uri=category_uri)
     articles = category_obj.article_set.all()
 
+    tags = extract_tags(articles)
     tag_string = request.GET.get('tag', '')
     if tag_string != '':
         articles = articles.filter(tags__tag=tag_string)
 
     return render_to_response(
         get_template_for_category(category_obj), {
+            'tag': tag_string,
+            'tags': tags,
             'category': category_obj,
             'articles': articles,
         })
@@ -61,3 +64,6 @@ def get_template_for_category(category):
 
 def get_template_for_article(article):
     return 'pc/article.html'
+
+def extract_tags(articles):
+    return list(set([article.tags.all()[0] for article in articles]))
