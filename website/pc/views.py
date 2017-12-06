@@ -19,8 +19,13 @@ def article(request, article_id=None, article_uri=None):
         article_obj = get_object_or_404(Article, pk=article_id)
     else:
         article_obj = get_object_or_404(Article, uri=article_uri)
+    if article_obj.category.title == '普通文章':
+        title = article_obj.title 
+    else: 
+        title = article_obj.category.title
     return render_to_response(get_template_for_article(article_obj),
         {
+            'title': title,
             'article': article_obj,
             'recommends': recommends
         })

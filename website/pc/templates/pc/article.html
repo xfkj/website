@@ -5,7 +5,7 @@
 
 {% block description %} {{article.desc}} {% endblock %}
 
-{% block title %} {{article.category.title}}-{{article.title}} | {% endblock %}
+{% block title %}{{article.title}}-{% if article.category.title != '普通文章' %}{{article.category.title}}-{% endif %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "css/articleDetails/articleDetails.css" %}">  
@@ -13,7 +13,7 @@
 
 {% block body %}
 <div class="page">
-    {% include 'pc/_nav.html' with link=article.title %}
+    {% include 'pc/_nav.html' with link=title %}
 </div>
 
 <div class="title">

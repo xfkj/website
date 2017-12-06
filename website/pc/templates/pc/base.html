@@ -41,11 +41,9 @@
   <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
   <link rel="stylesheet" href="{% static "css/home/home.css" %}">
   <script src="{% static "utils/jquery/jquery.min.js" %}"></script>
-  <meta name="description" content="2015年高考非凡艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考创造校史最好成绩,全校平均分超过艺术本科线52.9分.全校本科过线率81.06%,小牛班（重点班）1/5学生总分超过500分,全校1/8的学生总分超过本科线100分以上,12位学生总分超过500分,120位学生总分超过400分!{% block description %}{% endblock %}">
-  <meta name="keywords" content="艺艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考,{% block keyword %}{% endblock %}">
-  <title>
-    {% block title %}{% endblock %} 非凡教育官网—艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考教育培训
-  </title>
+  <meta name="description" content="{% block description %}2015年高考非凡艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考创造校史最好成绩,全校平均分超过艺术本科线52.9分.全校本科过线率81.06%,小牛班（重点班）1/5学生总分超过500分,全校1/8的学生总分超过本科线100分以上,12位学生总分超过500分,120位学生总分超过400分!{% endblock %}">
+  <meta name="keywords" content="{% block keyword %}艺艺术生文化课,美院附中,游学,高中补习班,中国美院附中,艺术生高考,{% endblock %}">
+  <title>{% block title %}{% endblock %}非凡教育</title>
   <script src="https://cdn.bootcss.com/mobile-detect/1.3.7/mobile-detect.min.js"></script>
   <script>
     (function() {
