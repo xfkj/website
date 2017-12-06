@@ -14,7 +14,7 @@
 
 {% block body %}
 <div class="page">
-    {% include 'pc/_nav.html' %}
+    {% include 'pc/_nav.html' with link=category.title %}
 </div>
 
 <div class="frontCover">
@@ -44,27 +44,27 @@
       left: 50%;
       transform: translateX(-50%);
       overflow: hidden;
-      border: 2px solid #aaa;
+      border: 2px solid #e8e8e8;
       box-sizing: border-box;
     }
     .swiper-slide {
       display: block;
-      color: inherit;
+      color: #555;
       width: auto !important;
       box-sizing: border-box;
-      padding: 10px 20px;
+      padding: 10px 23px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .swiper-slide:hover {
-      color: #4fc08d;
+      color: #ff9c00;
     }
     .swiper-slide.active {
-      color: #4fc08d;
+      color: #ff9c00;
     }
     .swiper-slide:not(:last-child) {
-      border-right: 2px solid #aaa;
+      border-right: 2px solid #e8e8e8;
     }
   </style>
 </div>

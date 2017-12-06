@@ -35,7 +35,7 @@ def category(request, category_id=None, category_uri=None):
     articles = category_obj.article_set.all()
 
     tags = extract_tags(articles)
-    tag_string = request.GET.get('tag', '')
+    tag_string = request.GET.get('tag', tags[0].tag)
     if tag_string != '':
         articles = articles.filter(tags__tag=tag_string)
 
