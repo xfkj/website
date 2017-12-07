@@ -23,7 +23,7 @@
   </div>
   <style>
     .header { position: relative; z-index: 15; }
-    .player-video { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 1; }
+    .player-video { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
     .player-video .open { background: url("{% static "mobile/img/play/icon_play.png" %}") no-repeat; background-size: 1.15rem 1.15rem; position: absolute; width: 1.15rem; height: 1.15rem; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     .player-video .player { transition: transform .3s; transform: translateX(-100%); z-index: 15; position: fixed; left: 0; right: 0; top: 0; bottom: 0; }
     .player-video .player.active { transform: translateX(0); }
@@ -84,9 +84,6 @@
       </li>
     </ul>
     <style>
-      .header .menu {
-        z-index: 100;
-      }
       .header .menu ul li .icon {
         position: relative;
         border-radius: 50%;
