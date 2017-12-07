@@ -21,7 +21,7 @@
 </div>
 
 <div class="content nav-content">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-auto-height">
         {% for article in articles %}
         <div class="nav-module swiper-slide swiper-no-swiping">
             {{ article.content | safe }}
@@ -54,8 +54,20 @@
         <input type="hidden" name="production" value="高考冲刺营">
     </form>
 </div>
-
+<style>
+    .swiper-auto-height .swiper-slide {
+        height: auto;
+        display: table;
+    }
+</style>
 <script type="text/javascript">
+$(function() {
+    var $swiperAutoHeight = $('.swiper-auto-height');
+    setTimeout(function() {
+        $swiperAutoHeight.height($swiperAutoHeight.find('.swiper-slide-active').height() + 20)    
+    }, 0);
+})
+
 $('#baoming').on('submit', function(e) {
     e.preventDefault();
     var fields = $('#baoming').serializeArray();

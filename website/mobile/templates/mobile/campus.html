@@ -22,7 +22,7 @@
 </div>
 
 <div class="content nav-content">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-auto-height">
         {% for article in articles %}
         <div class="nav-module swiper-slide swiper-no-swiping" id="{{article.id}}">
             {{ article.content | safe }}
@@ -35,6 +35,12 @@
 
 {% block foot %}
 {% include 'mobile/_nav.html' %}
+<style>
+    .swiper-auto-height .swiper-slide {
+        height: auto;
+        display: table;
+    }
+</style>
 <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "utils/headroom/headroom.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
@@ -55,9 +61,17 @@
             slidesPerView: 'auto'
         });
         var currentIndex = $('#{{id}}').index()
+
+        var $swiperAutoHeight = $('.swiper-auto-height');
+        $swiperAutoHeight.height($swiperAutoHeight.find('.swiper-slide-active').height() + 20)
+
         mySwiper.slideTo(currentIndex)
         navSwiper.slideTo(currentIndex)
         mySwiper.on('tap', function (swiper, e) {
+
+            setTimeout(function() {
+                $swiperAutoHeight.height($swiperAutoHeight.find('.swiper-slide-active').height() + 20)
+            }, 0);
 
             var slide = swiper.slides[swiper.clickedIndex];
             var slideLeft = slide.offsetLeft;
@@ -74,6 +88,7 @@
 
             $(".swiper-container  .active").removeClass('active');
             $(".swiper-container .swiper-slide").eq(swiper.clickedIndex).addClass('active');
+            
             navSwiper && navSwiper.slideTo(swiper.clickedIndex);
         });
     }

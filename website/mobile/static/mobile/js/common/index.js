@@ -29,6 +29,9 @@ $(document).ready(function () {
             slidesPerView: 'auto'
         });
         mySwiper.on('tap', function (swiper, e) {
+            setTimeout(function() {
+                $('.swiper-auto-height').height($('.swiper-auto-height').find('.swiper-slide-active').height() + 20)
+            }, 0);
             var slide = swiper.slides[swiper.clickedIndex];
             var slideLeft = slide.offsetLeft;
             var slideWidth = slide.clientWidth;
