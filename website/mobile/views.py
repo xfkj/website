@@ -73,6 +73,7 @@ def get_template_for_article(article):
         '非凡头条': 'mobile/topArticleDetails.html',
         '课程产品': 'mobile/optional.html',
         '普通文章': 'mobile/about.html',
+        '高考冲刺': 'mobile/optional.html',
     }
     return template_map[article.category.title]
 
