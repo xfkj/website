@@ -143,13 +143,21 @@
   <!-- 课程产品 -->
   <div class="banner">
     <ul>
-      {% for article in categories.课程产品 %}
       <li>
-        <a href="{% url 'article' article.id %}">
-          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="" class="lazyload">
+        <a href="{% url 'article_by_title' '全国班' %}">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{% static 'mobile/img/products/qgbgkccy.png' %}" alt="" class="lazyload">
         </a>
       </li>
-      {% endfor %}
+      <li>
+        <a href="{% url 'article_by_title' '浙江班' %}">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{% static 'mobile/img/products/zjbgkccy.png' %}" alt="" class="lazyload">
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'article_by_title' '选考冲刺' %}">
+          <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{% static 'mobile/img/products/zjbxkccy.png' %}" alt="" class="lazyload">
+        </a>
+      </li>
     </ul>
   </div>
   <!-- 非凡战绩 -->
