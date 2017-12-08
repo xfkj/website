@@ -16,19 +16,19 @@
     {% include 'pc/_nav.html' with link=title %}
 </div>
 
-<div class="title">
-  <div>
-    <p>{{article.title}}</p>
-  </div>
-</div>
-
 <div class="main">
   <div class="centre">
-    {% if article.pc_content %}
-      {{article.pc_content | safe}}
-    {% else %}
-      {{article.content | safe}}
-    {% endif %}
+    <div class="c-title">
+      <p>{{article.title}}</p>
+      <p class="tag">/&nbsp;&nbsp;非凡头条&nbsp;&nbsp;／</p>
+    </div>
+    <div class="content">
+      {% if article.pc_content %}
+        {{article.pc_content | safe}}
+      {% else %}
+        {{article.content | safe}}
+      {% endif %}
+    </div>
     <div class="recomend">
       <h2>推荐阅读</h2>
       <ul>
@@ -85,5 +85,110 @@
       }
     </style>
   </div>
+  <div class="right">
+    <div class="r-top">
+      <i class="icon"></i>
+      热门推荐
+    </div>
+    <a class="r-item">
+      <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
+      <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
+    </a>
+    <a class="r-item">
+        <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
+        <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
+      </a>
+      <a class="r-item">
+          <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
+          <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
+        </a>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'PingFangSC-Regular', Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;      
+    }
+    body {
+      background-color: #F8F8F8;   
+    }
+    .main {
+      display: flex;
+      width: 1130px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding-bottom: 50px;
+    }
+    .main .right {
+      width: 260px;
+      margin-left: 20px;
+    }
+    .r-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .r-top .icon {
+      width: 14px;
+      height: 18px;
+      display: block;
+      background: url("{% static 'img/fire.png' %}") no-repeat;
+      background-size: 14px 18px;
+      margin-right: 6px;
+    }
+    .r-item {
+      background-color: #fff;
+      overflow: hidden;
+      display: block;
+      cursor: pointer;
+      transition: all .5s;
+    }
+    .r-item:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
+      transform: translateY(-3px);
+    }
+    .r-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .r-item .r-title {
+      padding: 17px 14px;
+      line-height: 1.5;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden !important;
+      box-sizing: border-box;
+      width: 100%;
+      color: #313030;
+    }
+    .r-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .c-title {
+      width: 100%;
+      border-radius: 4px;
+      background-color: #FFFFFF;
+      color: #313030;
+      font-size: 24px;
+      line-height: 33px;
+      box-sizing: border-box;
+      padding: 20px 16px 25px 30px;
+      margin-bottom: 20px;
+    }
+    .c-title .tag {
+      margin-top: 20px;
+      color: #C0C1C2;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .content {
+      background-color: #fff;
+      padding: 25px 18px;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+  </style>
 </div>
 {% endblock %}
