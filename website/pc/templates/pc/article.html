@@ -20,7 +20,7 @@
   <div class="centre">
     <div class="c-title">
       <p>{{article.title}}</p>
-      <p class="tag">/&nbsp;&nbsp;非凡头条&nbsp;&nbsp;／</p>
+      <p class="tag">/&nbsp;&nbsp;{{article.category.title}}&nbsp;&nbsp;／</p>
     </div>
     <div class="content">
       {% if article.pc_content %}
@@ -32,7 +32,7 @@
     <div class="recomend">
       <h2>推荐阅读</h2>
       <ul>
-      {% for a in recommends|slice:":5" %}
+      {% for a in recommends %}
         <li>
           <a class="item" href="{% url 'pc_article' a.id %}">{{ a.title }}</a>
         </li>
@@ -90,18 +90,12 @@
       <i class="icon"></i>
       热门推荐
     </div>
-    <a class="r-item">
-      <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
-      <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
+    {% for a in recommends %}
+    <a class="r-item" href="{% url 'pc_article' a.id %}">
+      <div class="r-title">{{a.title}}</div>
+      <img src="{{ a.cover.url }}" alt="{{a.title}}">
     </a>
-    <a class="r-item">
-        <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
-        <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
-      </a>
-      <a class="r-item">
-          <div class="r-title">【非凡小牛班】这世界，多数人想牛，少数人敢牛！【非凡小牛班】这世界</div>
-          <img src="http://img5.duitang.com/uploads/item/201507/26/20150726223738_XmVxE.jpeg" alt="">
-        </a>
+    {% endfor %}
   </div>
   <style>
     * {
