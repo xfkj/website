@@ -67,7 +67,7 @@ $('#baoming').on('submit', function(e) {
       $.ajax({
         type: 'post',
         data: data,
-        url: 'core/api/visitors',
+        url: '/core/api/visitors',
         success: function () {
           $('.popup').show();
         },
