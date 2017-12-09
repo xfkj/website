@@ -23,16 +23,14 @@ class ArticleAdminForm(forms.ModelForm):
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
     list_display = (
-        'area',
         'title',
-        'keyword',
         'category',
         'promote',
         'is_recommend',
         'weight',
     )
     list_display_links = ('title', )
-    list_editable = ('keyword', 'category', 'promote', 'is_recommend', 'weight', 'area')
+    list_editable = ('category', 'promote', 'is_recommend', 'weight')
     list_filter = ('area', 'category', 'promote', 'tags')
     readonly_fields = ('image_tag',)
 
