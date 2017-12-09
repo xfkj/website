@@ -25,7 +25,7 @@
 
 <div>
     <div class="signUp">
-        <form>
+        <form id="baoming">
             <div>
                 <i></i>
                 <input required type="text" id="name" name="name" placeholder="请输入您的姓名">
@@ -53,6 +53,7 @@
 <script type="text/javascript">
 $('#baoming').on('submit', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     var fields = $('#baoming').serializeArray();
     var data = {};
     fields.forEach(item => {
@@ -63,19 +64,19 @@ $('#baoming').on('submit', function(e) {
         alert('手机号码不符合格式')
     } else {
       $('#submitBtn').disabled = true;
-      $('.popup').show();
-      // $.ajax({
-      //   type: 'post',
-      //   data: data,
-      //   url: 'core/api/visitors',
-      //   success: function () {
-      //     $('.popup').show();
-      //   },
-      //   error: function () {
-      //     alert('系统忙，请稍后再试...')
-      //   }
-      // })
+      $.ajax({
+        type: 'post',
+        data: data,
+        url: 'core/api/visitors',
+        success: function () {
+          $('.popup').show();
+        },
+        error: function () {
+          alert('系统忙，请稍后再试...')
+        }
+      })
     }
+    return false;
 })
 </script>
 
