@@ -50,9 +50,10 @@
 <script>
     $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
         var height = 0;
-        $(this).children().each(function(index, child) {
-            height += child.clientHeight;
-        })
+        var childs = el.children;
+        for (var i = 0, len = childs.length; i < len; i++) {
+            height += childs[i].clientHeight;
+        }
         $(this).height(height);
     })
     if ($('.swiper-container').length) {
