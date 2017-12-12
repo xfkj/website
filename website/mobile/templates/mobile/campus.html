@@ -38,7 +38,9 @@
 <style>
     .swiper-auto-height .swiper-slide {
         height: auto;
-        /* display: table; */
+        display: table;
+        width: 9.24rem;
+        max-width: 9.24rem;
     }
     video {
         max-width: 100vw;
@@ -48,14 +50,14 @@
 <script src="{% static "utils/headroom/headroom.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
 <script>
-    $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
+    /*$('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
         var height = 0;
         var childs = el.children;
         for (var i = 0, len = childs.length; i < len; i++) {
             height += childs[i].clientHeight;
         }
         $(this).height(height);
-    })
+    })*/
     if ($('.swiper-container').length) {
         var mySwiper = $('.swiper-container').swiper(_defineProperty({
             slidesPerView: 'auto',
