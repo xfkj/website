@@ -45,6 +45,13 @@
 <script src="{% static "utils/headroom/headroom.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
 <script>
+    $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
+        var height = 0;
+        $(el).children().each(function(index, child) {
+            height += $(child).height();
+        })
+        $(this).height(height);
+    })
     if ($('.swiper-container').length) {
         var mySwiper = $('.swiper-container').swiper(_defineProperty({
             slidesPerView: 'auto',
