@@ -50,8 +50,8 @@
 <script>
     $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
         var height = 0;
-        $(el).children().each(function(index, child) {
-            height += $(child).height();
+        $(this).children().each(function(index, child) {
+            height += +$(child).height();
         })
         console.log(height)
         $(this).height(height);
