@@ -47,18 +47,14 @@
 <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
 <script src="{% static "utils/headroom/headroom.min.js" %}"></script>
 <script src="{% static "mobile/js/common/index.js" %}"></script>
-<script src="https://cdn.bootcss.com/mobile-detect/1.3.7/mobile-detect.min.js"></script>
 <script>
     $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
         var height = 0;
         $(this).children().each(function(index, child) {
+            console.log(child);
             height += +$(child).height();
         })
-        if (new MobileDetect(window.navigator.userAgent).mobile()) {
-            $(this).height(height * 2);
-        } else {
-            $(this).height(height);
-        }
+        $(this).height(height);
         console.log(height)
         alert(height)
     })
