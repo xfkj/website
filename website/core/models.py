@@ -45,7 +45,7 @@ class Article(models.Model):
     pc_content = models.TextField(
         verbose_name="pc端正文(如果和移动端不一样，可以录入在这里)", null=True, blank=True)
     category = models.ForeignKey(
-        Category, verbose_name='分类', on_delete=models.CASCADE)
+        Category, verbose_name='分类', on_delete=models.PROTECT)
     promote = models.BooleanField(verbose_name='置于首页')
     is_recommend = models.BooleanField(verbose_name='设为推荐', default=False)
     weight = models.IntegerField(verbose_name='排序')
