@@ -51,7 +51,7 @@
     $('.swiper-auto-height').find('.swiper-slide').each(function(index, el) {
         var height = 0;
         $(this).children().each(function(index, child) {
-            console.log(child);
+            console.log(child, $(child).height());
             height += +$(child).height();
         })
         $(this).height(height);
