@@ -14,7 +14,7 @@
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
 <div class="banner" style="position: relative;overflow: hidden;">
-  <div class="video-player">
+  <!-- <div class="video-player">
     <div class="player"></div>
     <div class="play-video">
         <div class="mask"></div>
@@ -25,7 +25,7 @@
             </video>
         </div>
       </div>
-  </div>
+  </div> -->
   <style>
     .video-player .player{width:86px;height:86px;background:url("{% static 'img/play/icon_play.png' %}") no-repeat;background-size:86px 86px;position:absolute;left:50%;top:50%;margin-top:-43px;margin-left:-43px;z-index:1;cursor:pointer}.play-video{position:fixed;z-index:99999;left:0;top:0;right:0;bottom:0;display:none}.play-video .mask{width:100%;height:100%;background:rgba(0, 0, 0, .76)}.play-video .video{position:absolute;float:left;top:50%;left:50%;transform:translate(-50%, -50%);box-shadow:0 4px 12px 0 rgba(0, 0, 0, 1)}.play-video .video>video{max-width:100%;max-height:100%;margin:0;min-width:600px;user-select:none;-webkit-user-select:none}.play-video .close{width:44px;height:44px;background:url("{% static 'img/play/icon_play_close.png' %}") no-repeat;background-size:44px 44px;position:absolute;right:20px;top:20px}
   </style>
@@ -88,25 +88,70 @@
     <div class="look-all">
       <a href="{% url 'pc_category_by_uri' 'fei-fan-tou-tiao' %}">查看更多</a>
     </div>
-    <div class="main">
-      {% for a in categories.非凡头条 %}
-      <a class="item" style="background-image: url('{{ a.cover.url }}')" href="{% url 'pc_article' a.id %}">
-        <div class="blur-container act-item-cover sub{{forloop.counter}}">
-          <strong>
-            <span>{{a.title}}</span>
-          </strong>
-          <p></p>
-          <style>
-            .sub{{forloop.counter}}:before {
-              background-image: url("{{ a.cover.url }}");
-            }
-          </style>
-        </div>
-      </a>
-      {% endfor %}
+    <div class="toutiao-content">
+      <div class="video">
+        <video controls preload="none" poster="/static/img/play/play_poster.jpeg" width="480px" height="auto">
+          <source src="http://ffwebsite.ffjy.org/%E6%88%90%E7%89%871080P.mp4" type="video/mp4">
+        </video>
+        <h3 class="video-title">七分钟快速了解非凡！</h3>
+        <p>
+          非凡每年国美的录取人数都是业内第一，很少有机构能够达到非凡的一半。在非凡，国美的平均录取率为77.8%；
+          历年本科平均过线率在80%以上；高考成绩相较于入学成绩，平均提高138.07分...
+        </p>
+      </div>
+      <div class="text">
+        {% for a in categories.非凡头条|slice:'2' %}
+        <a class="content" href="{% url 'pc_article' a.id %}">
+          <img src="{{ a.cover.url }}" class="cover">
+          <div>
+            <h3>{{a.title}}</h3>
+            <p>{{a.desc}}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .toutiao-content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .toutiao-content h3 {
+    color: rgba(0, 0, 0, 0.85);
+    margin: 0;
+    font-weight: normal;
+  }
+  .toutiao-content p {
+    color:rgba(0, 0, 0, 0.65);
+    margin-top: 8px;
+  }
+  .toutiao-content .video {
+    width: 480px;
+    margin-right: 48px;
+    padding-right: 32px;
+    border-right: 2px solid rgba(0, 0, 0, 0.25);
+  }
+  .video-title {
+    padding-top: 16px;
+  }
+  .text .content {
+    display: flex;
+    height: 160px;
+    margin-top: 24px;
+  }
+  .content:first-child {
+    margin: 0;
+  }
+  .text .cover {
+    width: 240px;
+    margin-right: 16px;
+  }
+</style>
+
 <div class="zhanji" style="margin-top: 50px;">
   <div class="container">
     <div class="title"></div>
