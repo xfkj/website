@@ -5,6 +5,7 @@ from core.models import Article, Category, Tag, Seo
 def home(request):
     data = {}
     data['categories'] = {}
+    data['important_news'] = Article.objects.filter(tags__tag='重要新闻')
 
     categories = Category.objects.all()
     for cat in categories:

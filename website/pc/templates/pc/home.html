@@ -15,19 +15,21 @@
 {% include 'pc/_nav.html' with link="home" %}
 <div class="banner" style="position: relative;overflow: hidden;">
   {% for a in categories.pcbanner|slice:":1" %}
-  <a href="//ffjy.org/article/61/" draggable="false" 
-    style="
+  {% for a in categories.pcbanner|slice:":1" %}
+  <img src="{{a.cover.url}}" class="banner-cover" alt="非凡教育" 
+    draggable="false" onclick="window.location.href='http://localhost:8000/article/61/'">
+  <style>
+    .banner-cover {
       position: absolute; 
       top: 0; 
       left: 50%; 
       transform: translateX(-50%);
       height:100%;
-      width: 100%;
-      background-image:url('{{a.cover.url}}');
-      background-size: cover;
-      background-position:center;
-    "
-  ></a>
+      cursor: pointer;
+    }
+  </style>
+  {% endfor %}
+  </style>
   {% endfor %}
   <div class="container">
     <div class="receive">
@@ -101,15 +103,18 @@
         </p>
       </div>
       <div class="text">
-        {% for a in categories.非凡头条|slice:'3' %}
-        <a class="content" href="{% url 'pc_article' a.id %}">
-          <img src="{{ a.cover.url }}" class="cover">
-          <div>
-            <h3>{{a.title}}</h3>
-            <p>{{a.desc}}</p>
+        <div class="important">
+          {% for a in important_news|slice:'3' %}
+          <div class="cover" style="background-image:url('{{a.cover.url}}')">
+            <a href="{% url 'pc_article' a.id %}" >{{a.title}}</a>
           </div>
-        </a>
-        {% endfor %}
+          {% endfor %}
+        </div>
+        <div class="normal">
+          {% for a in categories.非凡头条|slice:'9' %}
+          <a href="{% url 'pc_article' a.id %}" {% if forloop.counter|divisibleby:"3" %}class="devider"{% endif %}>{{a.title}}</a>
+          {% endfor %}
+        </div>     
       </div>
     </div>
   </div>
@@ -142,17 +147,47 @@
   .video-title {
     padding-top: 16px;
   }
-  .text .content {
+  .toutiao-content .text {
     display: flex;
-    height: 160px;
-    margin-top: 24px;
+    justify-content: space-between;
   }
-  .content:first-child {
-    margin: 0;
-  }
-  .text .cover {
-    width: 240px;
+  .text .important {
     margin-right: 16px;
+  }
+  .text .important .cover {
+    display: block;
+    height: 150px;
+    width: 240px;
+    position: relative;
+    margin-bottom: 24px;
+        background-size: cover;
+    background-position: center;
+  }
+  .text .important .cover a {
+    position: absolute;
+    width: 240px;
+    bottom: 0;
+    padding: 4px;
+    color: #fafafa;
+    background: rgba(0, 0, 0, 0.65);
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: .5s all;
+  }
+  .text .important .cover a:hover { 
+    color: #ffe400;
+  }
+  .text .normal a {
+    display: block;
+    height: 50px;
+    list-style-type: disc;
+    transition: .5s all;
+  }
+  .text .normal a:hover {
+    color: #2f54eb;
+  }
+  .text .normal .devider {
+    margin-bottom: 24px;
   }
 </style>
 
