@@ -61,25 +61,86 @@
 </div>
 <div class="sub-banner">
   <div class="container">
-    <div class="web-width web-secondView">
-      <div class="main-div ">
-        <ul>
-          {% for a in categories.课程产品 %}
-          <li class="{% if forloop.counter == 1 %} first {% endif %}">
-            <a href="{% url 'pc_article' a.id %}">
-              <div class="imgTop" style="background-image: url('{{ a.cover.url }}'); background-size: cover;">
-                <div class="accordion-string accordion-string-block">
-                  <!-- <img class="accordion-img accordion-slide" src="img/banner_title01.png" height="96" width="96"/> -->
-                  <button class="btn">查看详情</button>
-                </div>
-              </div>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+    <div class="content">
+      {% for a in categories.课程产品|slice:'3' %}
+      <a href="{% url 'pc_article' a.id %}" style="background-image:url('{{a.cover.url}}')"></a>
+      {% endfor %}
     </div>
+    <ul class="time-horizontal">
+      <li><b></b>09/01 - 10/31<div>高考冲刺营</div></li>
+      <li class="active"><b></b>12/15 - 06/03<div>高考冲刺营</div></li>
+      <li class="future"><b></b>02/15 - 06/03<div>高考冲刺营</div></li>
+    </ul>
+    <br><br>
   </div>
+  <style>
+    .page .sub-banner {
+      height: auto;
+    }
+    .sub-banner .content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 36px;
+    }
+    .sub-banner .content a {
+      width: 390px;
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+    }
+    .time-horizontal {
+      padding: 24px;
+      list-style-type: none;
+      border-top: 2px solid #777;
+      width: 1200px;
+      padding: 0px;
+      margin: 0px;
+    }
+ 
+    .time-horizontal li {
+      float: left;
+      position: relative;
+      text-align: center;
+      width: 33.33333%;
+      padding-top: 10px;
+      font-size: 20px;
+    }
+    .time-horizontal li div {
+      font-size: 16px;
+      color: rgba(0, 0, 0, .85);
+    }
+ 
+  .time-horizontal li b:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 47%;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background: #666;
+  }
+  .time-horizontal li.active b:before {
+    background: rgb(199, 9, 9);
+    border: 2px solid rgb(199, 9, 9);
+  }
+  .time-horizontal li.future b:before {
+    background: rgb(6, 146, 57);
+    border: 2px solid rgb(6, 146, 57);
+  }
+  </style>
+</div>
+<!-- <div class="container">
+  <img src="/static/img/myfz.jpg" alt="" id="fyfz">
+  <style>
+    #fyfz {
+      display: block;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0px 15px 15px -10px #000;
+    }
+  </style> -->
 </div>
 <div class="toutiao news" style="margin-top: 50px;">
   <div class="container">
