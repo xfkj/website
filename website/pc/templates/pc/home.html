@@ -15,7 +15,6 @@
 {% include 'pc/_nav.html' with link="home" %}
 <div class="banner" style="position: relative;overflow: hidden;">
   {% for a in categories.pcbanner|slice:":1" %}
-  {% for a in categories.pcbanner|slice:":1" %}
   <img src="{{a.cover.url}}" class="banner-cover" alt="非凡教育" 
     draggable="false" onclick="window.location.href='http://ffjy.org/article/61/'">
   <style>
@@ -27,8 +26,6 @@
       height:100%;
       cursor: pointer;
     }
-  </style>
-  {% endfor %}
   </style>
   {% endfor %}
   <div class="container">
@@ -59,7 +56,7 @@
     </div>
   </div>
 </div>
-<div class="sub-banner">
+<div class="product">
   <div class="container">
     <div class="content">
       {% for a in categories.课程产品|slice:'3' %}
@@ -74,15 +71,16 @@
     <br><br>
   </div>
   <style>
-    .page .sub-banner {
+    .page .product {
       height: auto;
+      margin-top: 24px;
     }
-    .sub-banner .content {
+    .product .content {
       display: flex;
       justify-content: space-between;
       margin-bottom: 36px;
     }
-    .sub-banner .content a {
+    .product .content a {
       width: 390px;
       height: 240px;
       background-size: cover;
