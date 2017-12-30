@@ -67,6 +67,9 @@ def studio(request):
         'news': Article.objects.filter(category__title='非凡头条', promote=True)
     })
 
+def baidu(requst):
+    return render_to_response('pc/baidu_verify_GCKa1DpkNw.html')
+
 
 def get_template_for_category(category):
     cat_name = category.title
