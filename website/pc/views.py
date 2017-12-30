@@ -67,7 +67,7 @@ def studio(request):
         'news': Article.objects.filter(category__title='非凡头条', promote=True)
     })
 
-def baidu(requst):
+def baidu(request):
     return render_to_response('pc/baidu_verify_GCKa1DpkNw.html')
 
 
