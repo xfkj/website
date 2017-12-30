@@ -9,4 +9,5 @@ urlpatterns = [
     path('category/<int:category_id>/', views.category, name='pc_category'),
     path('article/<str:article_uri>/', views.article, name='pc_article_by_uri'),
     path('category/<str:category_uri>/', views.category, name='pc_category_by_uri'),
+    path('studio', views.studio, name='studio')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

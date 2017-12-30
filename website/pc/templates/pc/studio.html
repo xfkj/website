@@ -1,0 +1,64 @@
+{% extends 'pc/base.html' %}
+{% load staticfiles %}
+
+{% block keyword %} 杭州画室大全 {% endblock %}
+
+{% block description %} 非凡教育，杭州画室大全 {% endblock %}
+
+{% block title %}画室大全-非凡教育{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/studio.css" %}"> 
+{% endblock %}
+
+{% block body %}
+<div class="page">
+    {% include 'pc/_nav.html'%}
+</div>
+
+<div>
+    <img src="{{cat.cover.url}}" class="banner-cover" draggable="false">
+    <section class="studios">
+        <div class="studios-title">
+            <h2>杭州画室大全</h2>
+            <span>STUDIOS OF HANGZHOU</span>
+        </div>
+        <div class="studios-list">
+            {% for s in studios %}
+            <article class="studio">
+                <img src="{{s.cover.url}}" class="studio-cover"/>
+                <div class="studio-content">
+                   <h3 class="studio-title">{{s.title}}</h3>
+                   <p class="studio-desc">{{s.desc}}</p>
+                   <div class="studio-link">
+                       <a href="{% url 'pc_article' s.id %}">查看详情</a>
+                   </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>      
+    </section>
+
+    <section class="studios">
+            <div class="studios-title">
+                    <h2>非凡头条</h2>
+                    <span>NEWS OF FEIFAN</span>
+                </div>
+        <div class="studios-list">
+            {% for s in news|slice:':5' %}
+            <article class="studio">
+                <img src="{{s.cover.url}}" class="studio-cover"/>
+                <div class="studio-content">
+                   <h3 class="studio-title">{{s.title}}</h3>
+                   <p class="studio-desc">{{s.desc}}</p>
+                   <div class="studio-link">
+                       <a href="{% url 'pc_article' s.id %}">查看详情</a>
+                   </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>      
+    </section>
+</div>
+
+{% endblock %}

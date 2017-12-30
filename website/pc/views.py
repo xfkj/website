@@ -55,6 +55,17 @@ def category(request, category_id=None, category_uri=None):
             'category': category_obj,
             'articles': articles,
         })
+    
+def studio(request):
+    cat = get_object_or_404(Category, title="画室")
+    studios = Article.objects.filter(category__title='画室')
+    print(studios)
+
+    return render_to_response('pc/studio.html', {
+        'cat': cat,
+        'studios': studios,
+        'news': Article.objects.filter(category__title='非凡头条', promote=True)
+    })
 
 
 def get_template_for_category(category):
@@ -66,6 +77,7 @@ def get_template_for_category(category):
         '非凡战绩': 'pc/people.html',
         '非凡头条': 'pc/information.html',
         '上分学堂': 'pc/shangfenxuetang.html',
+        '画室' : 'pc/studio.html'
     }
 
     return cat_name in template_map and template_map[cat_name] or DEFAULT_TEMPLATE
