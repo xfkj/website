@@ -8,6 +8,7 @@
 
 {% block body %}
 <div class="header" style="background:url('{% static "mobile/img/home/banner.jpeg" %}');background-size:cover">
+  <a href="//www.ffjy.org/m/article/%E5%85%A8%E5%9B%BD%E7%8F%AD/" class="ccy"></a>
   <div class="player-video">
     <div class="open">
     </div>
@@ -30,6 +31,14 @@
     .player-video .player .mask { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0, 0, 0, .76); }
     .player-video .player .close { background: url("{% static "mobile/img/play/icon_play_close.png" %}") no-repeat; background-size: .59rem .59rem; position: absolute; width: .59rem; height: .59rem; right: .27rem; top: .27rem; }
     .player-video .player .video { position: absolute; z-index: 1; width: 100%; top: 30%; }
+    .ccy {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 60px;
+      bottom: 80px;
+      z-index: 10;
+    }
   </style>
   <div class="menu">
     <ul>
