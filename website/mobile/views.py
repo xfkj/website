@@ -48,6 +48,9 @@ def category(request, category_id=None, category_title=None):
             'id': article_id
         })
 
+def myfz(request):
+    return render_to_response('mobile/myfz.html')
+
 
 
 def get_template_for_category(category):
