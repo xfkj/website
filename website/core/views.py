@@ -10,7 +10,7 @@ from core.models import VisitorRecord, Article, Category
 def visitor(request):
     if request.method == 'POST':
         name = request.POST.get('name') or ''
-        phone = request.POST.get('mobile') or ''
+        phone = request.POST.get('mobile') or request.POST.get('phone')
         product = request.POST.get('product') or ''
         aim = request.POST.get('aim') or ''
         VisitorRecord(name=name, phone=phone, product=product, aim=aim).save()
