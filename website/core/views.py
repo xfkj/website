@@ -26,7 +26,7 @@ def studios_index(request):
     return JsonResponse(res, safe=False)
 
 def news(request):
-    res = list(Article.objects.filter(category__title='非凡头条').values('id', 'desc', 'cover', 'title'))
+    res = list(Article.objects.filter(category__title='非凡头条').values('id', 'desc', 'cover', 'title'))[:6]
     return JsonResponse(res, safe=False)
 def news_index(request):
     res = list(Article.objects.filter(category__title='非凡头条', promote=True).values('id', 'desc', 'cover', 'title'))
