@@ -22,8 +22,8 @@ def article(request, article_id=None, article_uri=None):
     else:
         article_obj = get_object_or_404(Article, uri=article_uri)
     if article_obj.category.title == '普通文章':
-        title = article_obj.title 
-    else: 
+        title = article_obj.title
+    else:
         title = article_obj.category.title
     return render_to_response(get_template_for_article(article_obj),
         {
@@ -55,7 +55,7 @@ def category(request, category_id=None, category_uri=None):
             'category': category_obj,
             'articles': articles,
         })
-    
+
 def studio(request):
     cat = get_object_or_404(Category, title="画室")
     studios = Article.objects.filter(category__title='画室')
@@ -69,6 +69,9 @@ def studio(request):
 
 def baidu(request):
     return render_to_response('pc/baidu_verify_GCKa1DpkNw.html')
+
+def baidu_dqOm(request):
+    return render_to_response('pc/baidu_verify_dqOmozAbWy.html')
 
 
 def get_template_for_category(category):

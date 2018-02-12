@@ -10,5 +10,6 @@ urlpatterns = [
     path('article/<str:article_uri>/', views.article, name='pc_article_by_uri'),
     path('category/<str:category_uri>/', views.category, name='pc_category_by_uri'),
     path('studio', views.studio, name='studio'),
-    path('baidu_verify_GCKa1DpkNw.html', views.baidu)
+    path('baidu_verify_GCKa1DpkNw.html', views.baidu),
+    path('baidu_verify_dqOmozAbWy.html', views.baidu_dqOm),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
