@@ -13,15 +13,16 @@
 {% block body %}
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
+{% include 'pc/_aside.html' %}
 <div class="banner" style="position: relative;overflow: hidden;">
   {% for a in categories.pcbanner|slice:":1" %}
-  <img src="{{a.cover.url}}" class="banner-cover" alt="非凡教育" 
+  <img src="{{a.cover.url}}" class="banner-cover" alt="非凡教育"
     draggable="false" onclick="window.location.href='http://ffjy.org/article/61/'">
   <style>
     .banner-cover {
-      position: absolute; 
-      top: 0; 
-      left: 50%; 
+      position: absolute;
+      top: 0;
+      left: 50%;
       transform: translateX(-50%);
       height:100%;
       cursor: pointer;
@@ -95,7 +96,7 @@
       padding: 0px;
       margin: 0px;
     }
- 
+
     .time-horizontal li {
       float: left;
       position: relative;
@@ -108,7 +109,7 @@
       font-size: 16px;
       color: rgba(0, 0, 0, .85);
     }
- 
+
   .time-horizontal li b:before {
     content: '';
     position: absolute;
@@ -206,7 +207,7 @@
       </span>
       <a href="https://www11.53kf.com/webCompany.php?arg=10157157&style=1&language=zh-cn&charset=gbk&kflist=off&kf=&zdkf_type=1&referer=http%3A%2F%2Flocalhost%3A8000%2F&keyword=&tfrom=1&tpl=crystal_blue&uid=4f961205ac6c51578212a8f184f7fd5e&timeStamp=1514448727800&ucust_id=">点击咨询</a>
     </li>
-    
+
 
   </ol>
 </div>
@@ -321,7 +322,7 @@
           {% for a in categories.非凡头条|slice:'9' %}
           <a href="{% url 'pc_article' a.id %}" {% if forloop.counter|divisibleby:"3" %}class="devider"{% endif %}>{{a.title}}</a>
           {% endfor %}
-        </div>     
+        </div>
       </div>
     </div>
   </div>
@@ -381,7 +382,7 @@
     font-size: 14px;
     transition: .5s all;
   }
-  .text .important .cover a:hover { 
+  .text .important .cover a:hover {
     color: #ffe400;
   }
   .text .normal a {

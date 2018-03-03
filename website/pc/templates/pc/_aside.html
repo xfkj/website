@@ -1,0 +1,113 @@
+{% load staticfiles %}
+<aside class="aside">
+  <ul>
+    <li id="cPhone" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/phone.png' %}" alt="电话">
+        <span>求学热线</span>
+      </div>
+      <span class="contact-content phone">400-009-1108</span>
+    </li>
+    <li id="v1" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/phone.png' %}" alt="电话">
+        <span>1v1咨询</span>
+      </div>
+      <span class="contact-content phone">17767162695</span>
+    </li>
+    <li id="xfxz" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <span>美术艺考</span>
+      </div>
+        <img src="{% static 'img/orcode/xfxz.png' %}" class="contact-content qrcode" alt="小凡学长">
+    </li>
+    <li id="guwen" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <span>音乐艺考</span>
+      </div>
+        <img src="{% static 'img/orcode/guwen.png' %}" class="contact-content qrcode" alt="顾问">
+    </li>
+    <li id="sari" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <span>高考咨询</span>
+      </div>
+        <img src="{% static 'img/orcode/sari.png' %}" class="contact-content qrcode" alt="顾问">
+    </li>
+    <li id="feifan" class="contact-item">
+      <div class="contact-icon">
+        <img src="{% static 'img/icons/qrcode.png' %}" alt="微信">
+        <span>公众号</span>
+      </div>
+        <img src="{% static 'img/orcode/feifan.png' %}" class="contact-content qrcode" alt="顾问">
+    </li>
+  </ul>
+</aside>
+
+<style>
+.aside {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 240px;
+}
+.contact-item {
+  position: relative;
+  color: #fff;
+}
+.contact-icon {
+  display: inline-block;
+  width: 80px;
+  padding: 8px 0;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  background: #947011;
+  cursor: pointer;
+}
+.contact-icon img{
+  display: block;
+  width: auto;
+  height: 32px;
+  margin: auto;
+}
+.contact-icon span {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+}
+.contact-content {
+  position: absolute;
+  bottom: 4px;
+  left: 90px;
+  min-width: 160px;
+  display: block;
+  padding: 8px;
+  background-color: #947011;
+  border-radius: 4px;
+  opacity: 0;
+  transition: all .75s;
+}
+.qrcode {
+  width: 200px;
+  height: 200px;
+}
+.phone {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.contact-item:hover .contact-icon {
+  background-color: #b38815;
+}
+#cPhone:hover .contact-content,
+#v1:hover .contact-content,
+#xfxz:hover .contact-content,
+#guwen:hover .contact-content,
+#sari:hover .contact-content,
+#feifan:hover .contact-content
+{
+  opacity: 1;
+}
+</style>
