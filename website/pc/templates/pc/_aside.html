@@ -2,46 +2,52 @@
 <aside class="aside">
   <ul>
     <li class="contact-item">
-      <div id="cPhone" class="contact-icon">
+      <div id="baoming" class="contact-icon">
         <img src="{% static 'img/icons/phone.png' %}" alt="电话">
-        <span>求学热线</span>
+        <span>报名热线</span>
       </div>
       <span class="contact-content">400-009-1108</span>
     </li>
     <li class="contact-item">
-      <div id="v1" class="contact-icon">
+      <div id="xuankao" class="contact-icon">
         <img src="{% static 'img/icons/phone.png' %}" alt="电话">
-        <span>1v1咨询</span>
+        <span>选考咨询</span>
       </div>
       <span class="contact-content">17767162695</span>
+    <li class="contact-item">
+      <div id="gaokao" class="contact-icon">
+        <img src="{% static 'img/icons/phone.png' %}" alt="电话">
+        <span>高考咨询</span>
+      </div>
+      <span class="contact-content">400-050-9886</span>
     </li>
     <li class="contact-item">
       <div id="xfxz" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
-        <span>美术艺考</span>
+        <span>美术咨询</span>
       </div>
         <img src="{% static 'img/orcode/xfxz.png' %}" class="contact-content" alt="小凡学长">
     </li>
     <li class="contact-item">
+      <div id="yinyue" class="contact-icon">
+        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <span>音乐咨询</span>
+      </div>
+        <img src="{% static 'img/orcode/chenpan.png' %}" class="contact-content" alt="小凡学长">
+    </li>
+    <li class="contact-item">
       <div id="guwen" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
-        <span>音乐艺考</span>
+        <span>传媒咨询</span>
       </div>
         <img src="{% static 'img/orcode/guwen.png' %}" class="contact-content" alt="顾问">
     </li>
     <li class="contact-item">
       <div id="sari" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
-        <span>高考咨询</span>
+        <span>新政咨询</span>
       </div>
         <img src="{% static 'img/orcode/sari.png' %}" class="contact-content" alt="顾问">
-    </li>
-    <li class="contact-item">
-      <div id="feifan" class="contact-icon">
-        <img src="{% static 'img/icons/qrcode.png' %}" alt="微信">
-        <span>公众号</span>
-      </div>
-        <img src="{% static 'img/orcode/feifan.png' %}" class="contact-content" alt="顾问">
     </li>
   </ul>
 </aside>
@@ -97,17 +103,20 @@ img.contact-content {
 }
 span.contact-content {
   font-size: 20px;
-  letter-spacing: 2px;
   text-align: center;
+  letter-spacing: 2px;
+  font-family: times;
 }
 .contact-icon:hover {
   background-color: #b38815;
 }
-#cPhone:hover + .contact-content,
-#v1:hover + .contact-content,
+#baoming:hover + .contact-content,
+#xuankao:hover + .contact-content,
+#gaokao:hover + .contact-content,
 #xfxz:hover + .contact-content,
 #guwen:hover + .contact-content,
 #sari:hover + .contact-content,
+#yinyue:hover + .contact-content,
 #feifan:hover + .contact-content
 {
   opacity: 1;
