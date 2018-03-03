@@ -1,47 +1,47 @@
 {% load staticfiles %}
 <aside class="aside">
   <ul>
-    <li id="cPhone" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="cPhone" class="contact-icon">
         <img src="{% static 'img/icons/phone.png' %}" alt="电话">
         <span>求学热线</span>
       </div>
-      <span class="contact-content phone">400-009-1108</span>
+      <span class="contact-content">400-009-1108</span>
     </li>
-    <li id="v1" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="v1" class="contact-icon">
         <img src="{% static 'img/icons/phone.png' %}" alt="电话">
         <span>1v1咨询</span>
       </div>
-      <span class="contact-content phone">17767162695</span>
+      <span class="contact-content">17767162695</span>
     </li>
-    <li id="xfxz" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="xfxz" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
         <span>美术艺考</span>
       </div>
-        <img src="{% static 'img/orcode/xfxz.png' %}" class="contact-content qrcode" alt="小凡学长">
+        <img src="{% static 'img/orcode/xfxz.png' %}" class="contact-content" alt="小凡学长">
     </li>
-    <li id="guwen" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="guwen" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
         <span>音乐艺考</span>
       </div>
-        <img src="{% static 'img/orcode/guwen.png' %}" class="contact-content qrcode" alt="顾问">
+        <img src="{% static 'img/orcode/guwen.png' %}" class="contact-content" alt="顾问">
     </li>
-    <li id="sari" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="sari" class="contact-icon">
         <img src="{% static 'img/icons/wx.png' %}" alt="微信">
         <span>高考咨询</span>
       </div>
-        <img src="{% static 'img/orcode/sari.png' %}" class="contact-content qrcode" alt="顾问">
+        <img src="{% static 'img/orcode/sari.png' %}" class="contact-content" alt="顾问">
     </li>
-    <li id="feifan" class="contact-item">
-      <div class="contact-icon">
+    <li class="contact-item">
+      <div id="feifan" class="contact-icon">
         <img src="{% static 'img/icons/qrcode.png' %}" alt="微信">
         <span>公众号</span>
       </div>
-        <img src="{% static 'img/orcode/feifan.png' %}" class="contact-content qrcode" alt="顾问">
+        <img src="{% static 'img/orcode/feifan.png' %}" class="contact-content" alt="顾问">
     </li>
   </ul>
 </aside>
@@ -89,24 +89,24 @@
   opacity: 0;
   transition: all .75s;
 }
-.qrcode {
+img.contact-content {
   width: 200px;
   height: 200px;
 }
-.phone {
+span.contact-content {
   font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
 }
-.contact-item:hover .contact-icon {
+.contact-icon:hover {
   background-color: #b38815;
 }
-#cPhone:hover .contact-content,
-#v1:hover .contact-content,
-#xfxz:hover .contact-content,
-#guwen:hover .contact-content,
-#sari:hover .contact-content,
-#feifan:hover .contact-content
+#cPhone:hover + .contact-content,
+#v1:hover + .contact-content,
+#xfxz:hover + .contact-content,
+#guwen:hover + .contact-content,
+#sari:hover + .contact-content,
+#feifan:hover + .contact-content
 {
   opacity: 1;
 }
