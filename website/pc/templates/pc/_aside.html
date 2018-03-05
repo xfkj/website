@@ -79,15 +79,14 @@
   font-size: 12px;
 }
 .contact-content {
+  display: none;
   position: absolute;
   bottom: 4px;
   left: 78px;
   min-width: 160px;
-  display: block;
   padding: 8px;
   background-color: #947011;
   border-radius: 4px;
-  opacity: 0;
   transition: all .75s;
 }
 img.contact-content {
@@ -112,6 +111,6 @@ span.contact-content {
 #yinyue:hover + .contact-content,
 #feifan:hover + .contact-content
 {
-  opacity: 1;
+  display: block;
 }
 </style>
