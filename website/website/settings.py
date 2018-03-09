@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = ('studios.ffjy.org')
+CORS_ORIGIN_WHITELIST = ('studios.ffjy.org', 'www.ffjy.org', 'ffjy.org')
 
 ROOT_URLCONF = 'website.urls'
 
