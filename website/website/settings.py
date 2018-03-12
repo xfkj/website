@@ -57,6 +57,10 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = False
 
+CORS_ORIGIN_WHITELIST = (
+    'studios.ffjy.org'
+)
+
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [
