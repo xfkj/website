@@ -8,6 +8,8 @@
 {% block title %}{{seo.title}}{% endblock %}
 
 {% block head %}
+<script src="http://www.zhangxinxu.com/study/js/timeCountDown.js"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
 {% endblock %}
 {% block body %}
@@ -131,6 +133,9 @@
   }
   </style>
 </div>
+
+{% include 'pc/_count-down.html' %}
+
 <div class="qs">
   <div class="qs-title">
     <h2>2018年艺术生备考常见的10大问题</h2>

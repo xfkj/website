@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<div class="container slip">
+  <div class="countDown">
+    <i class="fa fa-clock-o"></i>
+    <small>离高考还有</small>
+    <span id="month"></span>月<span id="day"></span>天<span id="hour"></span>小时<span id="mini"></span>分<span id="sec"></span>秒
+  </div>
+  <a target="_blank" href="http://sq.ffjy.org/">
+    <small>非凡算分神器</small>
+    <i class="fa fa-calculator"></i>
+  </a>
+</div>
+
+<script>
+  var date = Date.UTC(2018, 6, 7, 8, 0)
+  var day = document.getElementById('day')
+  fnTimeCountDown(date, {month: month, day: day, hour: hour, mini: mini, sec: sec})
+</script>
+
+<style>
+.slip {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px !important;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 8px;
+  color: rgba(0,0,0,.7);
+  background-color: #f8f8f8;
+}
+.countDown{
+}
+.countDown span {
+  margin-left: 2px;
+  font-size: 24px;
+  color: #dc7902;
+}
+.slip i {
+  font-size: 30px;
+  opacity: .6;
+}
+</style>
