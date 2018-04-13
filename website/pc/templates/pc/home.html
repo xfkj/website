@@ -16,11 +16,12 @@
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
 {% include 'pc/_aside.html' %}
-<div class="banner" style="position: relative;overflow: hidden;height: 800px;">
-  <video src="https://s3.cn-north-1.amazonaws.com.cn/video-banner/banner.mp4" autoplay loop class="banner-cover" width="1960">
+<div class="banner" style="position: relative;overflow: hidden;height: 650px;">
+  <video src="https://s3.cn-north-1.amazonaws.com.cn/video-banner/banner.mp4" autoplay loop class="banner-cover" width="100%">
   </video>
   <style>
     .banner-cover {
+      background: #222;
       position: absolute;
       top: 0;
       left: 50%;
@@ -321,7 +322,7 @@
           </style>
       </div>
       <div class="text">
-        <div class="important">
+        <div class="im-news">
           {% for a in important_news|slice:'3' %}
           <div class="cover" style="background-image:url('{{a.cover.url}}')">
             <a href="{% url 'pc_article' a.id %}" >{{a.title}}</a>
@@ -369,19 +370,20 @@
     display: flex;
     justify-content: space-between;
   }
-  .text .important {
-    margin-right: 16px;
+  div.normal {
+    margin-left: 16px;
   }
-  .text .important .cover {
+  .text .im-news .cover {
     display: block;
     height: 150px;
     width: 240px;
     position: relative;
     margin-bottom: 24px;
-        background-size: cover;
+    background-size: cover;
     background-position: center;
+    margin-right: 16px;
   }
-  .text .important .cover a {
+  .text .im-news .cover a {
     position: absolute;
     width: 240px;
     bottom: 0;
@@ -392,7 +394,7 @@
     font-size: 14px;
     transition: .5s all;
   }
-  .text .important .cover a:hover {
+  .text .im-news .cover a:hover {
     color: #ffe400;
   }
   .text .normal a {
