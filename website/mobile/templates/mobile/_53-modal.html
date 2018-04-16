@@ -13,6 +13,11 @@
 </div>
 
 <script>
+var timer = setTimeout(function() {
+  modal53.style.display = 'block'
+  clearTimeout(timer)
+}, 8000)
+
 closeModal.onclick = function () {
   modal53.style.display = 'none'
 }
@@ -22,6 +27,7 @@ closeModal.onclick = function () {
   .modal53 {
     position: fixed;
     z-index: 999;
+    display: none;
     top: 20%;
     left: 16%;
     width: 68%;
@@ -53,8 +59,8 @@ closeModal.onclick = function () {
   .modal53 span {
     position: absolute;
     display: block;
-    top: 0;
-    right: 0;
+    top: -15px;
+    right: -15px;
     width: 40px;
     height: 40px;
     font-size: 24px;
@@ -62,6 +68,5 @@ closeModal.onclick = function () {
     color: #ddd;
     background: #555;
     border-radius: 50%;
-    transform: translate(36%,-36%);
   }
 </style>
