@@ -21,11 +21,12 @@
       secs:  Math.floor(t%60)
     }
   }
-  var end = new Date('2018-6-7 8:00')
+  var end = new Date('2018/6/7 8:00')
 
   function setHtml() {
     var r = countDown(end)
-    times.innerHTML = r.days + '天' + r.hours + '小时' + r.mins + '分' + r.secs + '秒'
+    console.log(r.days);
+    times.innerText= r.days + '天' + r.hours + '小时' + r.mins + '分' + r.secs + '秒'
   }
 
   setHtml()
