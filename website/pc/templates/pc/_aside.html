@@ -3,41 +3,41 @@
   <ul>
     <li class="contact-item">
       <div id="xuankao" class="contact-icon">
-        <img src="{% static 'img/icons/phone.png' %}" alt="电话">
+        <i class="fa fa-phone"></i>
         <span>选考咨询</span>
       </div>
       <span class="contact-content">17767162695</span>
     <li class="contact-item">
       <div id="gaokao" class="contact-icon">
-        <img src="{% static 'img/icons/phone.png' %}" alt="电话">
+        <i class="fa fa-phone"></i>
         <span>高考咨询</span>
       </div>
       <span class="contact-content">400-050-9886</span>
     </li>
     <li class="contact-item">
       <div id="xfxz" class="contact-icon">
-        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <i class="fa fa-wechat"></i>
         <span>美术咨询</span>
       </div>
         <img src="{% static 'img/orcode/xfxz.png' %}" class="contact-content" alt="小凡学长">
     </li>
     <li class="contact-item">
       <div id="yinyue" class="contact-icon">
-        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <i class="fa fa-wechat"></i>
         <span>音乐咨询</span>
       </div>
         <img src="{% static 'img/orcode/chenpan.png' %}" class="contact-content" alt="小凡学长">
     </li>
     <li class="contact-item">
       <div id="guwen" class="contact-icon">
-        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <i class="fa fa-wechat"></i>
         <span>传媒咨询</span>
       </div>
         <img src="{% static 'img/orcode/guwen.png' %}" class="contact-content" alt="顾问">
     </li>
     <li class="contact-item">
       <div id="sari" class="contact-icon">
-        <img src="{% static 'img/icons/wx.png' %}" alt="微信">
+        <i class="fa fa-wechat"></i>
         <span>新政咨询</span>
       </div>
         <img src="{% static 'img/orcode/sari.png' %}" class="contact-content" alt="顾问">
@@ -54,7 +54,7 @@
 }
 .contact-item {
   position: relative;
-  color: #fff;
+  color: #80848f;
 }
 .contact-icon {
   display: inline-block;
@@ -63,14 +63,13 @@
   margin-bottom: 4px;
   padding-top: 4px;
   border-radius: 8px;
-  background: #947011;
+  background: #f8f8f8;
   cursor: pointer;
 }
-.contact-icon img{
+.contact-icon i{
   display: block;
-  width: auto;
-  width: 32px;
-  margin: auto;
+  font-size: 32px;
+  text-align: center;
 }
 .contact-icon span {
   display: block;
@@ -85,9 +84,8 @@
   left: 78px;
   min-width: 160px;
   padding: 8px;
-  background-color: #947011;
+  background-color: #f8f8f8;
   border-radius: 4px;
-  transition: all .75s;
 }
 img.contact-content {
   width: 200px;
@@ -99,18 +97,10 @@ span.contact-content {
   letter-spacing: 2px;
   font-family: times;
 }
-.contact-icon:hover {
-  background-color: #b38815;
-}
-#baoming:hover + .contact-content,
-#xuankao:hover + .contact-content,
-#gaokao:hover + .contact-content,
-#xfxz:hover + .contact-content,
-#guwen:hover + .contact-content,
-#sari:hover + .contact-content,
-#yinyue:hover + .contact-content,
-#feifan:hover + .contact-content
-{
+.contact-item:hover > .contact-content{
   display: block;
+}
+.contact-item:hover {
+  color: #495060
 }
 </style>

@@ -21,11 +21,19 @@
       secs:  Math.floor(t%60)
     }
   }
-  var end = new Date('2018/6/7 8:00')
+
+  function getEnd() {
+    var now = new Date()
+    var year = now.getFullYear()
+    var end = new Date(year + '/6/7 8:00')
+    if (now > end) end.setFullYear(year + 1)
+    return end
+  }
+
+  var end = getEnd()
 
   function setHtml() {
     var r = countDown(end)
-    console.log(r.days);
     times.innerText= r.days + '天' + r.hours + '小时' + r.mins + '分' + r.secs + '秒'
   }
 
