@@ -8,13 +8,11 @@
 {% block title %}{{seo.title}}{% endblock %}
 
 {% block head %}
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
 {% endblock %}
 {% block body %}
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
-{% include 'pc/_aside.html' %}
 <div class="banner" style="position: relative;overflow: hidden;height: 650px;">
   <video src="https://s3.cn-north-1.amazonaws.com.cn/video-banner/banner.mp4" poster="https://s3.cn-north-1.amazonaws.com.cn/video-banner/poster.JPG" autoplay loop class="banner-cover" width="100%">
   </video>

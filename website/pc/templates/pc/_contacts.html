@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<ul class="ct">
+  <li class="ct-item">
+    <div class="ct-left">
+      <i class="fa fa-phone ct-icon"></i>
+      <div class="ct-title">电话</div>
+    </div>
+    <span class="ct-right">17767162695</span>
+  </li>
+  <li class="ct-item">
+    <div class="ct-left">
+      <i class="fa fa-qq ct-icon"></i>
+      <div class="ct-title">QQ群</div>
+    </div>
+    <img class="ct-right" src="{% static "img/contacts/qq_qun.png" %}" alt="非凡QQ群">
+  </li>
+  <li class="ct-item">
+    <div class="ct-left">
+      <i class="fa fa-weixin ct-icon"></i>
+      <div class="ct-title">微群</div>
+    </div>
+    <img class="ct-right" src="{% static "img/contacts/weixin_qun.jpeg" %}" alt="非凡微信群">
+  </li>
+  <li class="ct-item">
+    <div class="ct-left">
+      <i class="fa fa-weixin ct-icon"></i>
+      <div class="ct-title">公众号</div>
+    </div>
+    <img class="ct-right" src="{% static "img/contacts/gongzhonghao.jpeg" %}" alt="非凡公众号">
+  </li>
+  <li class="ct-item">
+    <div class="ct-left">
+      <i class="fa fa-weibo ct-icon"></i>
+      <div class="ct-title">微博</div>
+    </div>
+    <img class="ct-right" src="{% static "img/contacts/weibo.png" %}" alt="非凡微博">
+  </li>
+</ul>
+
+<style>
+.ct {
+  position: fixed;
+  top: 20%;
+  z-index: 999;
+}
+.ct-item {
+  position: relative;
+  margin-bottom: 4px;
+}
+.ct-left{
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  border: solid 1px #bbb;
+  color: #999;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.ct-icon {
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+.ct-title {
+  font-size: 12px;
+}
+.ct-right {
+  display: none;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  padding: 20px;
+  left: 48px;
+  bottom: -56px;
+  background-image: url({% static "img/contacts/bg.png" %});
+  background-size: cover;
+  background-position: center;
+}
+span.ct-right {
+  height: 48px;
+  bottom: 0px;
+  line-height: 48px;
+  padding: 0 18px;
+  font-size: 18px;
+}
+.ct-item:hover > .ct-left {
+  background: #ffe400;
+  color: #fff;
+  border: none;
+}
+.ct-item:hover > .ct-right {
+  display: inline-block;
+}
+</style>

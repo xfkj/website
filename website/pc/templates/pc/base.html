@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="{% static "utils/normalize/normalize.css" %}">
   <link rel="stylesheet" href="{% static "utils/notie/notie.min.css" %}">
   <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static "css/home/home.css" %}">
   <script src="{% static "utils/jquery/jquery.min.js" %}"></script>
   <meta name="description" content="{% block description %}{% endblock %}">
@@ -55,6 +56,7 @@
 </head>
 <body>
   {% block body %}{% endblock %}
+  {% include 'pc/_contacts.html' %}
   {% include 'pc/_footer.html' %}
   <script src="{% static "utils/notie/notie.min.js" %}"></script>
   <script src="{% static "utils/swiper/swiper-3.4.2.min.js" %}"></script>
