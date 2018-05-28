@@ -319,7 +319,6 @@
 
 <style>
   .toutiao-content {
-    .toutiao-content .video {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -336,6 +335,7 @@
     margin-top: 16px;
     line-height: 1.5;
   }
+  .toutiao-content .video {
     width: 480px;
     margin-right: 48px;
     padding-right: 32px;
@@ -506,7 +506,7 @@
         <a href="{% url 'pc_article' a.id %}" class="item">
           <div class="intro-top">
             <div class="default">
-              <i class="icon" style="background-image:url('{% static "img/home/about-feifan/" %}{{ forloop.counter0}}.png')"></i>
+              <i class="icon" style="background-image:url({% static "img/home/about-feifan/" %}{{ forloop.counter0}}.png)"></i>
               <h3 class="title">{{a.title}}</h3>
             </div>
             <div class="hover">
