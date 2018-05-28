@@ -80,7 +80,7 @@ class Article(models.Model):
 class VisitorRecord(models.Model):
     name = models.CharField(max_length=100, verbose_name='访客姓名')
     phone = models.CharField(max_length=30, verbose_name='电话')
-    ip = models.CharField(max_length=30, verbose_name='归属地', default='')
+    ip = models.CharField(max_length=30, verbose_name='ip', default='')
     product = models.CharField(
         max_length=100, verbose_name='选择的产品', blank=True)
     aim = models.CharField(max_length=100, verbose_name='来源', blank=True)

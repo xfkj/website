@@ -11,7 +11,7 @@ def visitor(request):
     if request.method == 'POST':
         name = request.POST.get('name') or ''
         phone = request.POST.get('mobile') or request.POST.get('phone')
-        ip = request.POST.get('ip') or ''
+        ip = request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR')
         product = request.POST.get('product') or ''
         aim = request.POST.get('aim') or ''
         VisitorRecord(name=name, phone=phone, product=product, aim=aim, ip=ip).save()

@@ -10,8 +10,6 @@ function(i, e) {
                 type: "warning",
                 text: "所有字段都要填喔~"
             });
-            var ip = remote_ip_info;
-            n.ip = ip.province + ip.city;
             /^1[34578]\d{9}$/.test(n.phone) ? i.ajax({
                 type: "post",
                 data: n,
