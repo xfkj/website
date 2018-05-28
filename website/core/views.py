@@ -11,12 +11,8 @@ def visitor(request):
     if request.method == 'POST':
         name = request.POST.get('name') or ''
         phone = request.POST.get('mobile') or request.POST.get('phone')
-        client_ip = request.META.get('HTTP_X_FORWARDED_FOR')
-        if client_ip:
-            ip = cip
-        else:
-            ip = request.META.get('REMOTE_ADDR')
         product = request.POST.get('product') or ''
+        ip = request.POST.get('ip') or ''
         aim = request.POST.get('aim') or ''
         VisitorRecord(name=name, phone=phone, product=product, aim=aim, ip=ip).save()
         return HttpResponse(status=200)

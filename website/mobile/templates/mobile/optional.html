@@ -140,6 +140,7 @@ $('#baoming').on('submit', function(e) {
     fields.forEach(item => {
         data[item.name] = item.value;
     })
+    data.ip = returnCitySN.cip;
     var phoneReg = /^1(3|4|5|7|8)\d{9}$/;
     if (!phoneReg.test(data.mobile)) {
         alert('手机号码不符合格式')

@@ -10,6 +10,8 @@ function(i, e) {
                 type: "warning",
                 text: "所有字段都要填喔~"
             });
+            n.ip = returnCitySN.cip;
+            console.log(n);
             /^1[34578]\d{9}$/.test(n.phone) ? i.ajax({
                 type: "post",
                 data: n,
