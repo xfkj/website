@@ -9,6 +9,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static "utils/swiper/swiper-3.4.2.min.css" %}">
+<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
 {% endblock %}
 {% block body %}
 <div class="page">
@@ -318,6 +319,7 @@
 
 <style>
   .toutiao-content {
+    .toutiao-content .video {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -334,7 +336,6 @@
     margin-top: 16px;
     line-height: 1.5;
   }
-  .toutiao-content .video {
     width: 480px;
     margin-right: 48px;
     padding-right: 32px;

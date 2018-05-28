@@ -11,9 +11,10 @@ def visitor(request):
     if request.method == 'POST':
         name = request.POST.get('name') or ''
         phone = request.POST.get('mobile') or request.POST.get('phone')
+        ip = request.POST.get('ip') or ''
         product = request.POST.get('product') or ''
         aim = request.POST.get('aim') or ''
-        VisitorRecord(name=name, phone=phone, product=product, aim=aim).save()
+        VisitorRecord(name=name, phone=phone, product=product, aim=aim, ip=ip).save()
         return HttpResponse(status=200)
     else:
         return HttpResponse(status=400, reason='only POST is accepted')
