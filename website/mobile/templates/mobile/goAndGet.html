@@ -10,7 +10,7 @@
 <div class="header"></div>
 <div class="banner">
   <style>
-    .book {
+    .banner ul li a img {
       height: auto;
     }
   </style>
@@ -18,7 +18,7 @@
     {% for article in articles %}
     <li>
       <a href="{% url 'article' article.id %}">
-        <img class="book" src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
+        <img src="{% static "mobile/img/common/placeholder.svg" %}" data-src="{{ article.cover.url }}" alt="{{ article.title }}" class="lazyload">
       </a>
     </li>
     {% endfor %}
