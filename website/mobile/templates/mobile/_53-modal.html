@@ -1,16 +1,16 @@
-<div class="modal53" id="modal53">
-  <h2>非凡助学活动</h2>
+{% load staticfiles %}
+<a class="modal53" id="modal53" href="https://www11.53kf.com/webCompany.php?arg=10157157&style=1&language=cn&charset=gbk&kflist=off&kf=&zdkf_type=1&referer=http%3A%2F%2Flocalhost%3A8000%2F&keyword=&tfrom=1&tpl=crystal_blue&uid=4ca94855937f6ccc88aa0e28dd6f4ef5&timeStamp=1508735867091&ucust_id=">
+  <!-- <h2>非凡助学活动</h2>
   <p>
     免费领取<br>
     高三志愿填报<br>
     与高二学业指导<br>
     全套资料，名额有限，先到先得
-  </p>
-  <a href="https://www11.53kf.com/webCompany.php?arg=10157157&style=1&language=cn&charset=gbk&kflist=off&kf=&zdkf_type=1&referer=http%3A%2F%2Flocalhost%3A8000%2F&keyword=&tfrom=1&tpl=crystal_blue&uid=4ca94855937f6ccc88aa0e28dd6f4ef5&timeStamp=1508735867091&ucust_id=">
-    在线咨询
-  </a>
+  </p> -->
+  <img src="{% static "mobile/img/book.jpeg" %}">
+
   <span id="closeModal">&times;</span>
-</div>
+</a>
 
 <script>
 var timer = setTimeout(function() {
@@ -31,21 +31,25 @@ closeModal.onclick = function () {
     top: 20%;
     left: 16%;
     width: 68%;
-    line-height: 1.4;
+    /* line-height: 1.4;
     font-size: 16px;
     text-align: center;
     color: #495060;
     background: #f8f8f8;
-    border-radius: 8px;
+    border-radius: 8px; */
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
 
   }
-  .modal53 h2 {
+  .modal53 img {
+    display: block;
+    width: 100%;
+  }
+  /* .modal53 h2 {
     margin-bottom: 16px;
     margin-top: 8px;
     font-size: 20px;
-  }
-  .modal53 a {
+  } */
+  /* .modal53 a {
     display: block;
     margin-top: 8px;
     text-align: center;
@@ -55,7 +59,7 @@ closeModal.onclick = function () {
     color: #fff;
     border-radius: 0 0 8px 8px;
     background-color: #d4380d;
-  }
+  } */
   .modal53 span {
     position: absolute;
     display: block;
@@ -63,6 +67,7 @@ closeModal.onclick = function () {
     right: -15px;
     width: 40px;
     height: 40px;
+    text-align: center;
     font-size: 24px;
     line-height: 40px;
     color: #ddd;
