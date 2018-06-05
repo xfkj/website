@@ -1,14 +1,14 @@
 {% extends 'pc/base.html' %}
 {% load staticfiles %}
 
-{% block keyword %} {{category.title}} {% endblock %}
+{% block keyword %} 艺考生文化课,艺术生文化课,艺考文化课冲刺,非凡教育, {% endblock %}
 
-{% block description %} {{category.title}} {% endblock %}
+{% block description %} 非凡教育是全国一家大型的艺考生文化课冲刺学校，创办于2008年，学校专注于初高中的艺术生文化课辅导培训，拥有杭州、广州、福州、北京、江西等分校。 {% endblock %}
 
-{% block title %}{{category.title}}-{{site_name}}{% endblock %}
+{% block title %}艺术生文化课补习-艺考生文化课辅导-艺考文化课冲刺学校-非凡头条-非凡教育{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static "css/information/information.css" %}"> 
+<link rel="stylesheet" href="{% static "css/information/information.css" %}">
 
 {% endblock %}
 
@@ -111,12 +111,12 @@
           <div class="information-img">
               <img src="{{a.cover.url}}" alt="{{a.title}}">
           </div>
-    
+
           <div class="content">
             <div class="information-title">
               <p>{{a.title}}</p>
             </div>
-    
+
             <div class="btn">
                 <a href="{% url 'pc_article' a.id %}">
                 <button>查看详情</button>
@@ -129,10 +129,10 @@
   </div>
   <script>
       function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-    
+
       $(document).ready(function () {
         var index = $('.tags').find('.swiper-slide.active').index();
-        
+
         var mySwiper = $('.tags').swiper(_defineProperty({
           initialSlide: index,
           slidesPerView: 'auto',
@@ -141,7 +141,7 @@
         }, 'slidesPerView', 'auto')).on('touchstart', function (e) {
           e.preventDefault();
         });
-    
+
       });
     </script>
 
