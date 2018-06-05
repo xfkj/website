@@ -1,11 +1,11 @@
 {% extends 'pc/base.html' %}
 {% load staticfiles %}
 
-{% block keyword %} 艺考生文化课,艺术生文化课,艺考文化课冲刺,非凡教育, {% endblock %}
+{% block keyword %} {{category.title}} {% endblock %}
 
-{% block description %} 非凡教育是全国一家大型的艺考生文化课冲刺学校，创办于2008年，学校专注于初高中的艺术生文化课辅导培训，拥有杭州、广州、福州、北京、江西等分校。 {% endblock %}
+{% block description %} {{category.title}} {% endblock %}
 
-{% block title %}艺术生文化课补习-艺考生文化课辅导-艺考文化课冲刺学校-非凡头条-非凡教育{% endblock %}
+{% block title %}{{category.title}}-{{site_name}}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "css/information/information.css" %}">
