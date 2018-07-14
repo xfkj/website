@@ -14,7 +14,9 @@
 {% block body %}
 <div class="page">
 {% include 'pc/_nav.html' with link="home" %}
-<div class="banner" style="position: relative;overflow: hidden;height: 650px;">
+{% include 'pc/_banner.html' %}
+{% include 'pc/_shitingke_form.html' with articles=categories.试听课 %}
+<!-- <div class="banner" style="position: relative;overflow: hidden;height: 650px;">
   <video src="https://s3.cn-north-1.amazonaws.com.cn/video-banner/banner.mp4" poster="https://s3.cn-north-1.amazonaws.com.cn/video-banner/poster.JPG" autoplay loop class="banner-cover" width="100%">
   </video>
   <style>
@@ -27,43 +29,7 @@
       cursor: pointer;
     }
   </style>
-  <div class="container">
-    <div class="receive">
-      <div class="leadin">
-        <p>免费领取</p>
-        <p>价值 <span>1280</span>元</p>
-        <p>课程资料礼包</p>
-        <p class="gift">「 2018艺术生报考指南+导读课 」</p>
-      </div>
-      <style media="screen">
-        .leadin {
-          color: gold !important;
-          font-weight: 200;
-        }
-        .leadin p {
-          margin: 8px 0 !important;
-        }
-      </style>
-      <div class="receiveMain">
-        <form id="top-form" onsubmit="return false;">
-          <input type="hidden" name="aim" value="领取1280元礼包">
-          <input type="hidden" name="product" value="1280元礼包">
-          <div>
-          <input type="text" name="name" required="required"
-                placeholder="请输入你的姓名" data-label="姓名">
-          </div>
-          <div>
-          <input type="text" name="phone" required="required"
-                placeholder="请输入你的电话" data-label="电话">
-          </div>
-          <div class="receiveBtn">
-            <button>立即领取</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+</div> -->
 <div class="product">
   <div class="container">
     <div class="content">
