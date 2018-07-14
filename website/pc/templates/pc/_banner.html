@@ -1,8 +1,8 @@
+{% load staticfiles %}
 <section class="app-banner">
   <video src="https://s3.cn-north-1.amazonaws.com.cn/video-banner/banner.mp4" poster="https://s3.cn-north-1.amazonaws.com.cn/video-banner/poster.JPG" autoplay loop>
   </video>
-  <div class="shiting">
-    <h2 id="openShiTing" onclick="$('#m-shitingke').show()">1v1在线精品课点击试听</h2>
+  <div class="banner-content" onclick="$('#m-shitingke').show()">
   </div>
 </section>
 
@@ -11,26 +11,29 @@
   position: relative;
   height: 650px;
   overflow: hidden;
+  background: #000;
 }
 .app-banner video {
   display: block;
   width: 100%;
+  opacity: .7;
 }
-.shiting {
+.banner-content {
   position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 16px;
-  text-align: center;
-  color: gold;
-}
-.shiting h2{
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: 4px;
+  width: 250px;
+  height: 70px;
+  left: 0;
+  right: 0;
+  top: 240px;
+  margin: auto;
+  opacity: .9;
+  background-image: url("{% static 'img/logo.png' %}");
+  background-size: 100% 100%;
+  background-position: center;
   cursor: pointer;
+  transition: all .5s;
 }
-.shiting h2:hover {
-  text-decoration: underline;
+.banner-content:hover {
+  transform: scale(1.1);
 }
 </style>
