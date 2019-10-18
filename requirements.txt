@@ -18,7 +18,7 @@ pytz==2017.2
 qiniu==7.1.8
 requests==2.18.4
 six==1.11.0
-urllib3==1.22
+urllib3==1.24.2
 virtualenv==15.1.0
 wrapt==1.10.11
 yapf==0.20.0
