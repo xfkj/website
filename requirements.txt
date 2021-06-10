@@ -1,7 +1,7 @@
 astroid==1.5.3
 certifi==2017.7.27.1
 chardet==3.0.4
-Django==2.0b1
+Django==2.2.24
 django-js-asset==0.1.1
 django-mptt==0.8.7
 django-qiniu-storage==2.3.1
